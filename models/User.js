@@ -29,6 +29,8 @@ const userSchema = mongoose.Schema({
     }
 });
 
+
+
 userSchema.methods.getFullName = function () {
     return `Name: ${this.firstName} ${this.lastName}`;
 }
