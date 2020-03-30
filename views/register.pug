@@ -1,0 +1,27 @@
+extends layout
+
+block content
+
+    form(action="/users/register" method="POST")
+        label First name
+        input(type="text", name="firstName")
+        br
+        label Last name
+        input(type="text", name="lastName")
+        br
+        label Email
+        input(type="text", name="email")
+        br
+        label Password
+        input(type="password", name="password")
+        br
+        label Password repeart
+        input(type="password", name="password2")
+        br 
+        button(type="submit") GO
+    
+    p= wrong
+
+
+
+

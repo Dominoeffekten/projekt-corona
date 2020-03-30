@@ -1,0 +1,90 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+header {
+    text-align: right;
+    width: 100%;
+    border: 0px solid red;
+}
+header nav ul {
+    list-style: none;
+    margin-right: 10px;
+    text-align: right;
+}
+header nav ul li {
+    display: inline;
+    margin-right: 5px;
+    padding: 3px;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+main {
+    padding: 1em;
+}
+table{
+    width: 80%;
+    margin: 0 auto;
+    font-size: 15px;
+}
+th, td {
+    outline: 1px solid #696969;
+    padding: 14px;
+    margin: 10px;
+}
+.col_l {
+    font-weight: 600;
+    text-align: right;
+}
+.col_num {
+    text-align: right;
+}
+#countryForm, #langForm, #goverForm, #cityForm {
+    width:50%;
+    display: flex;
+    justify-content: space-between;
+    padding:20px;
+    margin: 0 auto;
+}
+
+#countryForm form, #cityForm form, #langForm form, #goverForm form {
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+input, select {
+    width:30%;
+    padding:5px;
+    margin:5px 0;
+    border:1px solid grey;
+    border-radius: 3px;
+    font-size:14px;
+}
+
+#cityForm input, #cityForm select, 
+#langForm input, #langForm select {width:47.5%;}
+#goverForm input {width:100%;}
+
+#submitButton {
+    width:50%;
+    margin:15px auto;
+    display:block;
+    padding:5px;
+}
+.delButton, .upButton {
+    font-size:20px;
+    background-color:transparent;
+    border:none;
+    text-align:center;
+    display:block;
+    margin:auto;
+}
+.who{
+    position: absolute;
+}
