@@ -49,10 +49,12 @@ input {
     display:block;
     margin:auto;
 }
-
 table{
     outline: 1px solid;
     padding: 14px;
     float: left;
     margin: 20px;
+}
+.wrong{
+    color: red;
 }

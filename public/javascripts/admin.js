@@ -32,22 +32,53 @@ const showToDos = function (e) {
     let users = JSON.parse(e.target.responseText);
 
     let tabel = document.createElement("table");
+    let th = document.createElement("th");
+    let p = document.createTextNode("Title");
+    th.appendChild(p);
+    tabel.appendChild(th);
+    let th1 = document.createElement("th");
+    let p1 = document.createTextNode("First Name");
+    th1.appendChild(p1);
+    tabel.appendChild(th1);
+    let th2 = document.createElement("th");
+    let p2 = document.createTextNode("Update");
+    th2.appendChild(p2);
+    tabel.appendChild(th2);
 
     users.forEach(function (user) {
 
         let tr1 = document.createElement('tr');
+
         let td1 = document.createElement('td');
-        let tit = document.createTextNode("Title: " + user.role);
+        let tit = document.createTextNode(user.role);
         let td2 = document.createElement('td');
-        let name = document.createTextNode("First name: " + user.firstName);
+        let name = document.createTextNode(user.firstName);
         td2.appendChild(name);
         td1.appendChild(tit);
         tr1.appendChild(td1);
         tr1.appendChild(td2);
-        
-        tabel.appendChild(tr1);
 
+        let td3 = document.createElement('td');
+        let form = document.createElement('form');
+        form.setAttribute("method", "POST");
+        form.setAttribute("action", "/users/admin/:user");
+
+        let input = document.createElement('input');
+        input.setAttribute("value", user.role);
+        input.setAttribute("name", "title");
+        input.setAttribute("type", "hidden");
+        form.appendChild(input);
+        
+        let delButton = document.createElement('button');
+        delButton.setAttribute("class", "delButton");
+        let delI = document.createTextNode("X");
+        delButton.appendChild(delI);
+        form.appendChild(delButton);
+
+        tr1.appendChild(form);
+        tabel.appendChild(tr1);
     });
+    
     $("userList").appendChild(tabel);
 }
 

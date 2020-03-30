@@ -97,29 +97,50 @@ router.get('/admin',  async function(req, res) { //start login
   });
 });
 router.get('/admin/:user',  async function(req, res) { //start login
-  let user = await userHandler.getUsers({}, {sort: {role: 1}});
+  let user = await userHandler.getUsers({role: "new"}, {sort: {role: 1}});
   res.json(user);
-
+});
+router.post('/admin/:user',  async function(req, res) { //start login
+  let user = await userHandler.upsertUser({}, {sort: {role: 1}});
+  res.json(user);
 });
 
 /* user */
-router.get('/user',  async function(req, res) { //start login
-  res.render('user', { //admin is there
+router.get('/user',  async function(req, res) { //start user
+  res.render('user', { 
     subtitle: "The user site",
+    scriptLink:'/javascripts/user.js',
     loggedin: true,
     who: "Hello " + req.session.user,
   });
 });
-/* user */
-router.get('/user/:todo',  async function(req, res) { //start login
+router.get('/user/:todo',  async function(req, res) { //show todo
   let todo = await ToDoHandler.getToDo({}, {sort: {title: 1}});
   res.json(todo)
-
 });
-router.post('/user',  async function(req, res) { //start login
+
+router.post('/user/:todo',[
+  check('title').isLength({ min: 1 }),
+  ],  async function(req, res) { //indsætter en todo liste
+  const errors = validationResult(req) //Write something - title er forkort
+  if (!errors.isEmpty()) {
+    return res.render('user', {
+      subtitle: "The user site",
+      wrong: 'Title is to short'
+    });
+  }
   let to = ToDoHandler.upsertToDo(req);
   console.log(to);
-  
+});
+router.post('/user',  async function(req, res) { //fjerner en todo
+  console.log(req.body);
+  let todo = await ToDoHandler.delToDo({title: req.body.title}, {sort: {title: 1}});
+  res.render('user', { 
+    subtitle: "The user site",
+    scriptLink:'/javascripts/user.js',
+    loggedin: true,
+    who: "Hello " + req.session.user,
+  });
 });
 
 

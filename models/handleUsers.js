@@ -44,3 +44,12 @@ exports.getUsers = async function (query, sort) {
         console.error(e);
     }
 };
+
+exports.delUsers = async function (name) {
+    try {
+        let cs = await mon.remove(dbServer, dbName, User, name);
+        return cs;
+    } catch (e) {
+        console.log(e);
+    }
+}

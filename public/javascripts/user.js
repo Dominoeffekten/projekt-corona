@@ -24,7 +24,7 @@ const makeToDos = function (e) {
     let date = year +"-"+month+"-"+day
 
     //brugernavn
-    $("name").value = "user";
+    $("name").value = "new";
     //start dato for to do
     $("start").setAttribute("value", date);
     $("start").setAttribute("min", date);
@@ -45,23 +45,27 @@ const showToDos = function (e) {
     to.forEach(function (todo) {
         let tabel = document.createElement("table");
         let tr = document.createElement("tr");
+        let td = document.createElement("td");
 
         let form = document.createElement('form');
         form.setAttribute("method", "POST");
-        form.setAttribute("action", "/users/user/:todo");
+        form.setAttribute("action", "/users/user");
+
         let input = document.createElement('input');
         input.setAttribute("value", todo.title);
         input.setAttribute("name", "title");
         input.setAttribute("type", "hidden");
+        form.appendChild(input);
+
         let delButton = document.createElement('button');
         delButton.setAttribute("class", "delButton");
-        let delI = document.createElement("I");
-        delI.setAttribute("class", "fas fa-times");
+        let delI = document.createTextNode("X");
         delButton.appendChild(delI);
         form.appendChild(delButton);
-        form.appendChild(input);
-        tr.appendChild(form);
-        tabel.appendChild(tr);
+
+        td.appendChild(form);
+        tr.appendChild(td);
+        
 
         let tr1 = document.createElement('tr');
         let p = document.createElement("p");
@@ -83,6 +87,8 @@ const showToDos = function (e) {
         let dead = document.createTextNode("Deadline: " + todo.deadline);
         p3.appendChild(dead);
         tr1.appendChild(p3);
+
+        tabel.appendChild(tr);
         tabel.appendChild(tr1);
 
         $("toDo").appendChild(tabel);

@@ -2,7 +2,7 @@ extends layout
 
 block content
     h2= "Add a new to do"
-    form(action="/users/user" method="POST")
+    form(action="/users/user/:todo" method="POST")
         label User
         input(type="text", name="name" id="name" value=read readonly)
         br 
@@ -19,5 +19,6 @@ block content
         input(type="date", name="start" id="start")
         br 
         button(type="submit") GO
+    p.wrong= wrong
     h2= "See the to dos"
     div#toDo
