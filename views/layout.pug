@@ -1,7 +1,7 @@
 doctype html
 html
     head
-        title= 'Fragments of the World'
+        title= 'My to do list'
         link(rel='stylesheet', href='/stylesheets/style.css')
         script(type='module' src=scriptLink)
         script(src='https://kit.fontawesome.com/9f34627289.js')
@@ -18,19 +18,9 @@ html
                 ul
                     li
                         a(href="/") Home
-                    li
-                        a(href="/worldview") Continents
-                    li
-                        a(href="/country") Country
-                    li
-                        a(href="/city") City
-                    li
-                        a(href="/lang") Language
-                    li
-                        a(href="/goverments") Form of goverment
         main
             block all
-                h1= 'Fragments of the World'
+                h1= 'My to do list'
                 h2= subtitle
                 p= messages
                     block content

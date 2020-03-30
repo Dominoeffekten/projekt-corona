@@ -7,6 +7,8 @@ const { body,validationResult,sanitizeBody,check } = require('express-validator'
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
+
+/* register. */
 router.get('/register', async function(req, res, next) {    // display register route
   res.render('register', {                    // display register form view
       subtitle: 'Register User'     // input data to view
@@ -27,17 +29,17 @@ router.post('/register',  [
   }
   userHandler.upsertUser(req);
   console.log(req.body)
-  return res.redirect('/');                   // skip the receipt, return to fp
+  return res.redirect('/'); // skip the receipt, return to fp
 });
 
 /* Login. */
-router.get('/login', function(req, res) {       // display register route
-  res.render('login', {                       // display register form view
-      subtitle: 'User Login'        // input data to view
+router.get('/login', function(req, res) { //start login
+  res.render('login', {
+      subtitle: 'User Login'
   });
 });
 router.post('/login', [
-  check('email').isLength({ min: 1 }),
+  check('email').isLength({ min: 5 }),
   check('password').isLength({ min: 6}),
   ], async function(req, res) {// new user post route
   

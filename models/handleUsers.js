@@ -30,6 +30,7 @@ exports.verifyUser = async function (req) {
         req.session.user = u[0].firstName;      // set session vars
     } else {
         req.session = undefined;
+        return req.session;
     }
     return success;
 };
