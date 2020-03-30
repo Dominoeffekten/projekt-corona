@@ -4,7 +4,7 @@ block content
     h2= "Add a new to do"
     form(action="/users/user" method="POST")
         label User
-        input(type="text", name="name" id="name" readonly)
+        input(type="text", name="name" id="name" value=read readonly)
         br 
         label Title
         input(type="text", name="title")

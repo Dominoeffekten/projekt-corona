@@ -42,7 +42,7 @@ router.get('/login', function(req, res) { //start login
 router.post('/login', [
   check('email').isLength({ min: 5 }),
   check('password').isLength({ min: 6}),
-  ], async function(req, res) {// new user post route
+  ], async function(req, res, next) {// new user post route
   
   //Write something - navnet eller adgangskoden er for kort
   const errors = validationResult(req)
@@ -60,9 +60,10 @@ router.post('/login', [
     if (req.session.role === 'admin') {
       res.render('admin', { //admin is there
         subtitle: "The admin site",
+        scriptLink:'/javascripts/admin.js',
         loggedin: true,
         who: "Hello " + req.session.user,
-        link:  "/users/admin"
+        link:  "/users/admin",
       });
     } else if (req.session.role === 'user') {
       res.render('user', { //user is there
@@ -70,7 +71,13 @@ router.post('/login', [
         subtitle: "The user site",
         loggedin: true,
         who: "Hello " + req.session.user,
-        link:  "/users/user"
+        link:  "/users/user",
+        read: req.session.user
+      });
+    } else if (req.session.role === 'new') {
+      res.render('index', { //user is there
+        subtitle: "You must be autozhied by a admin",
+        loggedin: false,
       });
     } 
   } else { //user not there
@@ -89,6 +96,12 @@ router.get('/admin',  async function(req, res) { //start login
     who: "Hello " + req.session.user
   });
 });
+router.get('/admin/:user',  async function(req, res) { //start login
+  let user = await userHandler.getUsers({}, {sort: {role: 1}});
+  res.json(user);
+
+});
+
 /* user */
 router.get('/user',  async function(req, res) { //start login
   res.render('user', { //admin is there

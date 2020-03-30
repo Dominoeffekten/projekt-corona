@@ -40,46 +40,54 @@ const showToDos = function (e) {
     while (element.firstChild) {
         element.removeChild(element.firstChild);
     }
-
-    let div = document.createElement("div");
-
-    //Opret forbindelse til api continent indholdet
     let to = JSON.parse(e.target.responseText);
 
-    let tabel = document.createElement("table");
-    let tr = document.createElement("tr");
-    let del = document.createTextNode("Delete");
-    tr.appendChild(del);
-    tabel.appendChild(tr);
-
     to.forEach(function (todo) {
+        let tabel = document.createElement("table");
+        let tr = document.createElement("tr");
 
-        let tr = document.createElement('tr');
-        let p = document.createTextNode("p");
-        let tit = document.createTextNode(todo.title);
-        //p.appendChild(tit);
-        tr.appendChild(p);
-
-        let p1 = document.createTextNode("p");
-        let text = document.createTextNode(todo.text);
-        p1.appendChild(text);
-        tr.appendChild(p1);
-
-        let p2 = document.createTextNode("p");
-        let start = document.createTextNode(todo.start);
-        p2.appendChild(start);
-        tr.appendChild(p2);
-
-        let p3 = document.createTextNode("p");
-        let dead = document.createTextNode(todo.deadline);
-        p3.appendChild(dead);
-        tr.appendChild(p3);
+        let form = document.createElement('form');
+        form.setAttribute("method", "POST");
+        form.setAttribute("action", "/users/user/:todo");
+        let input = document.createElement('input');
+        input.setAttribute("value", todo.title);
+        input.setAttribute("name", "title");
+        input.setAttribute("type", "hidden");
+        let delButton = document.createElement('button');
+        delButton.setAttribute("class", "delButton");
+        let delI = document.createElement("I");
+        delI.setAttribute("class", "fas fa-times");
+        delButton.appendChild(delI);
+        form.appendChild(delButton);
+        form.appendChild(input);
+        tr.appendChild(form);
         tabel.appendChild(tr);
+
+        let tr1 = document.createElement('tr');
+        let p = document.createElement("p");
+        let tit = document.createTextNode("Title: " + todo.title);
+        p.appendChild(tit);
+        tr1.appendChild(p);
+
+        let p1 = document.createElement("p");
+        let text = document.createTextNode("Message: " + todo.text);
+        p1.appendChild(text);
+        tr1.appendChild(p1);
+
+        let p2 = document.createElement("p");
+        let start = document.createTextNode("Start: " + todo.start);
+        p2.appendChild(start);
+        tr1.appendChild(p2);
+
+        let p3 = document.createElement("p");
+        let dead = document.createTextNode("Deadline: " + todo.deadline);
+        p3.appendChild(dead);
+        tr1.appendChild(p3);
+        tabel.appendChild(tr1);
+
+        $("toDo").appendChild(tabel);
+        
     });
-
-    div.appendChild(tabel);
-    $("toDo").appendChild(div);
-
 }
 
 function work(){
