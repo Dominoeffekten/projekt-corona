@@ -8,7 +8,6 @@ html
     body
         header
             nav
-                p.who= who
                 ul
                     li
                         a(href="/users/register") Register
@@ -18,9 +17,12 @@ html
                 ul
                     li
                         a(href="/") Home
+                    li
+                        a(href=link) Site
         main
             block all
                 h1= 'My to do list'
                 h2= subtitle
+                p.who= who
                 p= messages
                     block content

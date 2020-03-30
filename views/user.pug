@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+    form(action="/users/user" method="POST")
+        label User
+        input(type="text", name="Navn" readonly)
+        br 
+        label Title
+        input(type="text", name="title")
+        br 
+        label Text
+        input(type="text", name="text")
+        br
+        label Deadline
+        input(type="date", name="deadline" min=new Date)
+        br
+        label Start
+        input(type="date", name="start" min=new Date)
+        br 
+        button(type="submit") GO

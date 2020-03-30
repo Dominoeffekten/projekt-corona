@@ -43,7 +43,7 @@ router.post('/login', [
   check('password').isLength({ min: 6}),
   ], async function(req, res) {// new user post route
   
-  //Write something
+  //Write something - navnet eller adgangskoden er for kort
   const errors = validationResult(req)
   if (!errors.isEmpty()) {
     return res.render('login', {
@@ -52,14 +52,25 @@ router.post('/login', [
     });
   }
 
-  let rc = await userHandler.verifyUser(req); // verify credentials
+  let rc = await userHandler.verifyUser(req); // brugeren er godkendt
   console.log(rc);
+  console
   if (rc) {
-      res.render('index', { //user is there
-        subtitle: 'Home',
-          loggedin: true,
-          who: "Hello " + req.session.user
+    if (req.session.role === 'admin') {
+      res.render('admin', { //admin is there
+        subtitle: "The admin site",
+        loggedin: true,
+        who: "Hello " + req.session.user,
+        link:  "/users/admin"
       });
+    } else if (req.session.role === 'user') {
+      res.render('user', { //user is there
+        subtitle: "The user site",
+        loggedin: true,
+        who: "Hello " + req.session.user,
+        link:  "/users/user"
+      });
+    } 
   } else { //user not there
       res.render('login', {
         subtitle: 'User Login',
@@ -68,4 +79,26 @@ router.post('/login', [
       });
   }
 });
+/* admin */
+router.get('/admin', function(req, res) { //start login
+  res.render('admin', { //admin is there
+    subtitle: "The admin site",
+    loggedin: true,
+    who: "Hello " + req.session.user
+  });
+});
+/* user */
+router.get('/user', function(req, res) { //start login
+  res.render('user', { //admin is there
+    subtitle: "The user site",
+    loggedin: true,
+    who: "Hello " + req.session.user
+  });
+});
+
+
+
+
+
+
 module.exports = router;

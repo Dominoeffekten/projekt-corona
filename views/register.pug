@@ -3,6 +3,9 @@ extends layout
 block content
 
     form(action="/users/register" method="POST")
+        label Role
+        input(type="text", name="role" value="user" readonly)
+        br 
         label First name
         input(type="text", name="firstName")
         br

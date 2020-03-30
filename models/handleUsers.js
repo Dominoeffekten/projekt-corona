@@ -9,6 +9,7 @@ const dbName = "user";
 exports.upsertUser = async function (req) {
     let check = { email: req.body.email };
     let user = new User({
+        role: req.body.role,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
@@ -27,10 +28,10 @@ exports.verifyUser = async function (req) {
     let success = await bcrypt.compare(req.body.password, u[0].password);
     if (success) {
         req.session.authenticated = true;       // set session vars
+        req.session.role = u[0].role;       // set session vars
         req.session.user = u[0].firstName;      // set session vars
     } else {
         req.session = undefined;
-        return req.session;
     }
     return success;
 };
