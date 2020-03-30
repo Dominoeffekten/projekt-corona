@@ -1,5 +1,5 @@
 "use strict";
-const mon = require(".mongooseWrap");
+const mon = require("./mongooseWrap");
 const Todo = require("./ToDo");
 const dbServer = "localhost";
 const dbName = "user";
