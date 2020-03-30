@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const modCountry = require("../models/handleCountries");
 const { body,validationResult,sanitizeBody,check } = require('express-validator');
 
 

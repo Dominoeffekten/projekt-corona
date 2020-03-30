@@ -82,7 +82,7 @@ router.post('/login', [
   }
 });
 /* admin */
-router.get('/admin', function(req, res) { //start login
+router.get('/admin',  async function(req, res) { //start login
   res.render('admin', { //admin is there
     subtitle: "The admin site",
     loggedin: true,
@@ -90,16 +90,23 @@ router.get('/admin', function(req, res) { //start login
   });
 });
 /* user */
-router.get('/user', function(req, res) { //start login
+router.get('/user',  async function(req, res) { //start login
   res.render('user', { //admin is there
     subtitle: "The user site",
     loggedin: true,
-    who: "Hello " + req.session.user
+    who: "Hello " + req.session.user,
   });
 });
-router.post('/user', function(req, res) { //start login
+/* user */
+router.get('/user/:todo',  async function(req, res) { //start login
+  let todo = await ToDoHandler.getToDo({}, {sort: {title: 1}});
+  res.json(todo)
+
+});
+router.post('/user',  async function(req, res) { //start login
   let to = ToDoHandler.upsertToDo(req);
   console.log(to);
+  
 });
 
 

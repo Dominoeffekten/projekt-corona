@@ -10,14 +10,14 @@ const toDoSchema = mongoose.Schema({
         required: false
     },
     deadline: {
-        type: Date,
+        type: String,
         required: true
     },
 
     start: {
-        type: Date,
+        type: String,
         default: Date.now
     }
 });
 
-module.exports = mongoose.model("To do", toDoSchema, 'todo');
+module.exports = mongoose.model("ToDo", toDoSchema, 'todo');
