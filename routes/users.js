@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const userHandler = require("../models/handleUsers");
+const ToDoHandler = require("../models/handleToDo");
 const { body,validationResult,sanitizeBody,check } = require('express-validator');
 
 /* GET users listing. */
@@ -65,6 +66,7 @@ router.post('/login', [
       });
     } else if (req.session.role === 'user') {
       res.render('user', { //user is there
+        scriptLink:'/javascripts/user.js',
         subtitle: "The user site",
         loggedin: true,
         who: "Hello " + req.session.user,
@@ -94,6 +96,10 @@ router.get('/user', function(req, res) { //start login
     loggedin: true,
     who: "Hello " + req.session.user
   });
+});
+router.post('/user', function(req, res) { //start login
+  let to = ToDoHandler.upsertToDo(req);
+  console.log(to);
 });
 
 

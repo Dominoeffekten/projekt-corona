@@ -1,10 +1,10 @@
 extends layout
 
 block content
-
+    h2= "Add a new to do"
     form(action="/users/user" method="POST")
         label User
-        input(type="text", name="Navn" readonly)
+        input(type="text", name="name" id="name" readonly)
         br 
         label Title
         input(type="text", name="title")
@@ -13,9 +13,11 @@ block content
         input(type="text", name="text")
         br
         label Deadline
-        input(type="date", name="deadline" min=new Date)
+        input(type="date", name="deadline" id="deadline")
         br
         label Start
-        input(type="date", name="start" min=new Date)
+        input(type="date", name="start" id="start")
         br 
         button(type="submit") GO
+    h2= "See the to dos"
+    div#toDo

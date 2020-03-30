@@ -17,3 +17,14 @@ exports.upsertToDo = async function (req) {
     console.error(e);
     }
 };
+
+exports.getToDo = async function (que, sort) {
+    if (sort === null)
+        sort = {sort: {title: 1}};
+    try {
+        let cs = await mon.retrieve("localhost", "user", ToDo, que, sort);
+        return cs;
+    } catch (e) {
+        console.log(e);
+    }
+}
