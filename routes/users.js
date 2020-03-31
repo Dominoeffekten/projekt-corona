@@ -16,8 +16,9 @@ router.get('/register', async function(req, res, next) {    // display register 
   });
 });
 router.post('/register',  [
-  check('email', 'email is empty').isLength({ min: 1 }),
-  check('password', 'password is to short').isLength({ min: 6}),
+  check('email').isLength({ min: 1 }),
+  check('password').isLength({ min: 6}),
+  check('password2').isLength({ min: 6}),
   ], function(req, res) {   // new user post route
 
   const errors = validationResult(req)
@@ -57,16 +58,16 @@ router.post('/login', [
   console.log(rc);
   console
   if (rc) {
-    if (req.session.role === 'admin') {
-      res.render('admin', { //admin is there
+    if (req.session.role === 'admin') { //admin is there
+      res.render('admin', {
         subtitle: "The admin site",
         scriptLink:'/javascripts/admin.js',
         loggedin: true,
         who: "Hello " + req.session.user,
         link:  "/users/admin",
       });
-    } else if (req.session.role === 'user') {
-      res.render('user', { //user is there
+    } else if (req.session.role === 'user') {//user is there
+      res.render('user', { 
         scriptLink:'/javascripts/user.js',
         subtitle: "The user site",
         loggedin: true,
@@ -74,8 +75,8 @@ router.post('/login', [
         link:  "/users/user",
         read: req.session.email,
       });
-    } else if (req.session.role === 'new') {
-      res.render('index', { //user is there
+    } else if (req.session.role === 'new') {//new user is there
+      res.render('index', { 
         subtitle: "You must be authorized by a admin",
         loggedin: false,
       });
@@ -92,7 +93,7 @@ router.post('/login', [
 router.get('/admin',  async function(req, res) { //start login
   res.render('admin', { //admin is there
     subtitle: "The admin site",
-    loggedin: true,
+    loggedin: false,
     who: "Hello " + req.session.user
   });
 });
@@ -101,7 +102,8 @@ router.get('/admin/:user',  async function(req, res) { //start login
   res.json(user);
 });
 router.post('/admin/:user',  async function(req, res) { //start login
-  let user = await userHandler.upsertUser({}, {sort: {role: 1}});
+  console.log(req.body);
+  let user = await userHandler.changeUser({}, {sort: {role: 1}});
   res.json(user);
 });
 
@@ -110,18 +112,18 @@ router.get('/user',  async function(req, res) { //start user
   res.render('user', { 
     subtitle: "The user site",
     scriptLink:'/javascripts/user.js',
-    loggedin: true,
+    loggedin: false,
     who: "Hello " + req.session.user,
+    read: req.session.email,
   });
 });
 router.get('/user/:todo',  async function(req, res) { //show todo
   let todo = await ToDoHandler.getToDo({}, {sort: {title: 1}});
   res.json(todo)
 });
-
-router.post('/user/:todo',[
+router.post('/user/:todo',[ //indsætter en todo liste
   check('title').isLength({ min: 1 }),
-  ],  async function(req, res) { //indsætter en todo liste
+  ],  async function(req, res) { 
   const errors = validationResult(req) //Write something - title er forkort
   if (!errors.isEmpty()) {
     return res.render('user', {
@@ -129,7 +131,7 @@ router.post('/user/:todo',[
       wrong: 'Title is to short'
     });
   }
-  let to = ToDoHandler.upsertToDo(req);
+  let to = await ToDoHandler.upsertToDo(req);
   console.log(to);
 });
 router.post('/user',  async function(req, res) { //fjerner en todo

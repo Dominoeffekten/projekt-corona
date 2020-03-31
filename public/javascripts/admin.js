@@ -63,14 +63,14 @@ const showToDos = function (e) {
         td2.appendChild(name);
         tr1.appendChild(td2);
         
-
+        let td3 = document.createElement('td');
         let form = document.createElement('form');
         form.setAttribute("method", "POST");
         form.setAttribute("action", "/users/admin/:user");
 
         let input = document.createElement('input');
         input.setAttribute("value", user.email);
-        input.setAttribute("name", "title");
+        input.setAttribute("name", "email");
         input.setAttribute("type", "hidden");
         form.appendChild(input);
         
@@ -80,7 +80,8 @@ const showToDos = function (e) {
         delButton.appendChild(delI);
         form.appendChild(delButton);
 
-        tr1.appendChild(form);
+        td3.appendChild(form);
+        tr1.appendChild(td3);
         tabel.appendChild(tr1);
 
     });

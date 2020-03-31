@@ -27,10 +27,10 @@ exports.verifyUser = async function (req) {
     let u = await this.getUsers(check);
     let success = await bcrypt.compare(req.body.password, u[0].password);
     if (success) {
-        req.session.authenticated = true;       // set session vars
-        req.session.role = u[0].role;       // set session vars
-        req.session.user = u[0].email;      // set session vars
-        req.session.user = u[0].firstName;      // set session vars
+        req.session.authenticated = true;
+        req.session.role = u[0].role;
+        req.session.user = u[0].email;
+        req.session.user = u[0].firstName;
     } else {
         req.session = undefined;
     }
@@ -54,3 +54,19 @@ exports.delUsers = async function (name) {
         console.log(e);
     }
 }
+
+exports.changeUser = async function (req) {
+    let check = { email: req.body.email };
+    let user = new User({
+        role: "user",
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: await bcrypt.hash(req.body.password, saltTurns)
+    });
+    try {
+        let cs = await mon.upsert(dbServer, dbName, User, user, check);
+    } catch(e) {
+        console.error(e);
+    }
+};
