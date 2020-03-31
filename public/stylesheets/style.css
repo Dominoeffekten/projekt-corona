@@ -51,7 +51,7 @@ input {
 }
 table{
     padding: 14px;
-    float: left;
+    float: right;
     margin: 20px;
     background-color: #FFFA94;
     box-shadow: #cfcfcf 5px 5px 15px;
