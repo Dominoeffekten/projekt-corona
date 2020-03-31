@@ -1,0 +1,68 @@
+2020-03-31T09:14:48.008+0200 I  CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2020-03-31T09:14:48.019+0200 I  CONTROL  [initandlisten] MongoDB starting : pid=56450 port=27017 dbpath=/Users/tinnarichter/data/db 64-bit host=Tinnas-MacBook-Pro.local
+2020-03-31T09:14:48.019+0200 I  CONTROL  [initandlisten] db version v4.2.3
+2020-03-31T09:14:48.019+0200 I  CONTROL  [initandlisten] git version: 6874650b362138df74be53d366bbefc321ea32d4
+2020-03-31T09:14:48.019+0200 I  CONTROL  [initandlisten] allocator: system
+2020-03-31T09:14:48.019+0200 I  CONTROL  [initandlisten] modules: none
+2020-03-31T09:14:48.019+0200 I  CONTROL  [initandlisten] build environment:
+2020-03-31T09:14:48.019+0200 I  CONTROL  [initandlisten]     distarch: x86_64
+2020-03-31T09:14:48.019+0200 I  CONTROL  [initandlisten]     target_arch: x86_64
+2020-03-31T09:14:48.019+0200 I  CONTROL  [initandlisten] options: { storage: { dbPath: "/Users/tinnarichter/data/db" } }
+2020-03-31T09:14:48.022+0200 W  STORAGE  [initandlisten] Detected unclean shutdown - /Users/tinnarichter/data/db/mongod.lock is not empty.
+2020-03-31T09:14:48.023+0200 I  STORAGE  [initandlisten] Detected data files in /Users/tinnarichter/data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2020-03-31T09:14:48.023+0200 W  STORAGE  [initandlisten] Recovering data from the last clean checkpoint.
+2020-03-31T09:14:48.023+0200 I  STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7680M,cache_overflow=(file_max=0M),session_max=33000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000,close_scan_interval=10,close_handle_minimum=250),statistics_log=(wait=0),verbose=[recovery_progress,checkpoint_progress],
+2020-03-31T09:14:48.564+0200 I  STORAGE  [initandlisten] WiredTiger message [1585638888:564726][56450:0x115f1cdc0], txn-recover: Recovering log 4 through 5
+2020-03-31T09:14:48.616+0200 I  STORAGE  [initandlisten] WiredTiger message [1585638888:616150][56450:0x115f1cdc0], txn-recover: Recovering log 5 through 5
+2020-03-31T09:14:48.677+0200 I  STORAGE  [initandlisten] WiredTiger message [1585638888:677732][56450:0x115f1cdc0], txn-recover: Main recovery loop: starting at 4/768384 to 5/256
+2020-03-31T09:14:48.755+0200 I  STORAGE  [initandlisten] WiredTiger message [1585638888:755436][56450:0x115f1cdc0], txn-recover: Recovering log 4 through 5
+2020-03-31T09:14:48.814+0200 I  STORAGE  [initandlisten] WiredTiger message [1585638888:814062][56450:0x115f1cdc0], txn-recover: Recovering log 5 through 5
+2020-03-31T09:14:48.851+0200 I  STORAGE  [initandlisten] WiredTiger message [1585638888:851952][56450:0x115f1cdc0], txn-recover: Set global recovery timestamp: (0, 0)
+2020-03-31T09:14:48.923+0200 I  RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2020-03-31T09:14:48.938+0200 I  STORAGE  [initandlisten] Timestamp monitor starting
+2020-03-31T09:14:48.938+0200 I  CONTROL  [initandlisten] 
+2020-03-31T09:14:48.938+0200 I  CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2020-03-31T09:14:48.938+0200 I  CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2020-03-31T09:14:48.938+0200 I  CONTROL  [initandlisten] 
+2020-03-31T09:14:48.938+0200 I  CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2020-03-31T09:14:48.938+0200 I  CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server. 
+2020-03-31T09:14:48.938+0200 I  CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP 
+2020-03-31T09:14:48.938+0200 I  CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2020-03-31T09:14:48.938+0200 I  CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2020-03-31T09:14:48.938+0200 I  CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2020-03-31T09:14:48.938+0200 I  CONTROL  [initandlisten] 
+2020-03-31T09:14:48.938+0200 I  CONTROL  [initandlisten] 
+2020-03-31T09:14:48.938+0200 I  CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2020-03-31T09:14:48.945+0200 I  SHARDING [initandlisten] Marking collection local.system.replset as collection version: <unsharded>
+2020-03-31T09:14:48.949+0200 I  STORAGE  [initandlisten] Flow Control is enabled on this deployment.
+2020-03-31T09:14:48.950+0200 I  SHARDING [initandlisten] Marking collection admin.system.roles as collection version: <unsharded>
+2020-03-31T09:14:48.951+0200 I  SHARDING [initandlisten] Marking collection admin.system.version as collection version: <unsharded>
+2020-03-31T09:14:48.953+0200 I  SHARDING [initandlisten] Marking collection local.startup_log as collection version: <unsharded>
+2020-03-31T09:14:48.953+0200 I  FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/Users/tinnarichter/data/db/diagnostic.data'
+2020-03-31T09:14:48.955+0200 I  NETWORK  [listener] Listening on /tmp/mongodb-27017.sock
+2020-03-31T09:14:48.955+0200 I  NETWORK  [listener] Listening on 127.0.0.1
+2020-03-31T09:14:48.955+0200 I  SHARDING [LogicalSessionCacheRefresh] Marking collection config.system.sessions as collection version: <unsharded>
+2020-03-31T09:14:48.955+0200 I  NETWORK  [listener] waiting for connections on port 27017
+2020-03-31T09:14:48.955+0200 I  SHARDING [LogicalSessionCacheReap] Marking collection config.transactions as collection version: <unsharded>
+2020-03-31T09:14:49.034+0200 I  FTDC     [ftdc] Unclean full-time diagnostic data capture shutdown detected, found interim file, some metrics may have been lost. OK
+2020-03-31T09:14:49.122+0200 I  SHARDING [ftdc] Marking collection local.oplog.rs as collection version: <unsharded>
+2020-03-31T09:14:58.759+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:60499 #1 (1 connection now open)
+2020-03-31T09:14:58.760+0200 I  NETWORK  [conn1] received client metadata from 127.0.0.1:60499 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "4.2.3" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "19.3.0" } }
+2020-03-31T09:15:09.226+0200 I  CONTROL  [signalProcessingThread] got signal 2 (Interrupt: 2), will terminate after current cmd ends
+2020-03-31T09:15:09.233+0200 I  NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2020-03-31T09:15:09.233+0200 I  NETWORK  [listener] removing socket file: /tmp/mongodb-27017.sock
+2020-03-31T09:15:09.233+0200 I  -        [signalProcessingThread] Stopping further Flow Control ticket acquisitions.
+2020-03-31T09:15:09.234+0200 I  CONTROL  [signalProcessingThread] Shutting down free monitoring
+2020-03-31T09:15:09.234+0200 I  FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2020-03-31T09:15:09.236+0200 I  STORAGE  [signalProcessingThread] Deregistering all the collections
+2020-03-31T09:15:09.236+0200 I  STORAGE  [signalProcessingThread] Timestamp monitor shutting down
+2020-03-31T09:15:09.236+0200 I  STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2020-03-31T09:15:09.240+0200 I  STORAGE  [signalProcessingThread] Shutting down session sweeper thread
+2020-03-31T09:15:09.241+0200 I  STORAGE  [signalProcessingThread] Finished shutting down session sweeper thread
+2020-03-31T09:15:09.241+0200 I  STORAGE  [signalProcessingThread] Shutting down journal flusher thread
+2020-03-31T09:15:09.289+0200 I  STORAGE  [signalProcessingThread] Finished shutting down journal flusher thread
+2020-03-31T09:15:09.289+0200 I  STORAGE  [signalProcessingThread] Shutting down checkpoint thread
+2020-03-31T09:15:09.289+0200 I  STORAGE  [signalProcessingThread] Finished shutting down checkpoint thread
+2020-03-31T09:15:09.375+0200 I  STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2020-03-31T09:15:09.378+0200 I  CONTROL  [signalProcessingThread] now exiting
+2020-03-31T09:15:09.378+0200 I  CONTROL  [signalProcessingThread] shutting down with code:0
