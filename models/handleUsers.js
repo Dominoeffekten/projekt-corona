@@ -29,7 +29,7 @@ exports.verifyUser = async function (req) {
     if (success) {
         req.session.authenticated = true;
         req.session.role = u[0].role;
-        req.session.user = u[0].email;
+        req.session.email = u[0].email;
         req.session.user = u[0].firstName;
     } else {
         req.session = undefined;

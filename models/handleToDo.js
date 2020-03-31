@@ -7,6 +7,7 @@ const dbName = "user";
 exports.upsertToDo = async function (req) {
     let chk = { title: req.body.title };
     let toDo = new ToDo({
+        userID: req.body.id,
         title: req.body.title,
         text: req.body.text,
         deadline: req.body.deadline,

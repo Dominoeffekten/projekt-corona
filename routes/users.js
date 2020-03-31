@@ -60,22 +60,9 @@ router.post('/login', [
   console
   if (rc) {
     if (req.session.role === 'admin') { //admin is there
-      res.render('admin', {
-        subtitle: "The admin site",
-        scriptLink:'/javascripts/admin.js',
-        loggedin: true,
-        who: "Hello " + req.session.user,
-        link:  "/users/admin",
-      });
+      return res.redirect('/users/admin');
     } else if (req.session.role === 'user') {//user is there
-      res.render('user', { 
-        scriptLink:'/javascripts/user.js',
-        subtitle: "The user site",
-        loggedin: true,
-        who: "Hello " + req.session.user,
-        link:  "/users/user",
-        read: req.session.email,
-      });
+        return res.redirect('/users/user');
     } else if (req.session.role === 'new') {//new user is there
       res.render('index', { 
         subtitle: "You must be authorized by a admin",
@@ -90,11 +77,13 @@ router.post('/login', [
       });
   }
 });
+
 /* admin */
 router.get('/admin',  async function(req, res) { //start login
   res.render('admin', { //admin is there
     subtitle: "The admin site",
-    loggedin: false,
+    scriptLink:'/javascripts/admin.js',
+    loggedin: true,
     who: "Hello " + req.session.user
   });
 });
@@ -103,26 +92,31 @@ router.get('/admin/:user',  async function(req, res) { //start login
   res.json(user);
 });
 router.post('/admin/:user',  async function(req, res) { //start login
-  console.log(req.body);
   let user = await userHandler.changeUser({}, {sort: {role: 1}});
   res.json(user);
 });
 
 /* user */
 router.get('/user',  async function(req, res) { //start user
+  console.log(req.session.email);
+  console.log(req.session.user);
+  let todo = await ToDoHandler.getToDo({userID: req.session.email}, {sort: {deadline: 1, title: 1}});
+  //console.log(todo);
   res.render('user', { 
     subtitle: "The user site",
     scriptLink:'/javascripts/user.js',
-    loggedin: false,
+    loggedin: true,
     who: "Hello " + req.session.user,
-    read: req.session.email,
+    readEmail: req.session.email,
   });
 });
-router.get('/user/:todo',  async function(req, res) { //show todo
-  let todo = await ToDoHandler.getToDo({}, {sort: {title: 1}});
-  res.json(todo)
+router.get('/user/:email',  async function(req, res) { //show todo - virker ikke
+  console.log(req.session.email);
+  let email = await ToDoHandler.getToDo({userID: req.session.email}, {sort: {deadline: 1, title: 1}});
+  res.json(email);//console.log(todo);
 });
-router.post('/user/:todo',[ //indsætter en todo liste
+
+router.post('/user/',[ //indsætter en todo liste - pending
   check('title').isLength({ min: 1 }),
   ],  async function(req, res) { 
   const errors = validationResult(req) //Write something - title er forkort
@@ -132,9 +126,11 @@ router.post('/user/:todo',[ //indsætter en todo liste
       wrong: 'Title is to short'
     });
   }
-  let to = await ToDoHandler.upsertToDo(req);
-  console.log(to);
+  let todo = ToDoHandler.upsertToDo(req);
+  console.log(todo);
 });
+
+/*
 router.post('/user',  async function(req, res) { //fjerner en todo
   console.log(req.body);
   let todo = await ToDoHandler.delToDo({title: req.body.title}, {sort: {title: 1}});
@@ -146,11 +142,11 @@ router.post('/user',  async function(req, res) { //fjerner en todo
   });
 });
 
-
+/*
 router.post('/users/download',  async function(req, res) { //show todo
   let todo = await ToDoHandler.getToDo({}, {sort: {title: 1}});
   var json = res.json(todo)
-  /*fs.writeFile('TodoList.json', json, (err) => {
+  fs.writeFile('TodoList.json', json, (err) => {
     if (err) throw err;
     console.log('To do saved!');
   });
@@ -159,8 +155,8 @@ router.post('/users/download',  async function(req, res) { //show todo
     scriptLink:'/javascripts/user.js',
     loggedin: true,
     who: "Hello " + req.session.user,
-  });*/
-});
+  });
+});*/
 
 
 

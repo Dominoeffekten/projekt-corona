@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const toDoSchema = mongoose.Schema({
-    user: {
+    userID: {
         type: String,
         required: true
     },
@@ -18,7 +18,6 @@ const toDoSchema = mongoose.Schema({
         type: String,
         required: true
     },
-
     start: {
         type: String,
         default: Date.now

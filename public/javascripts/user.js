@@ -12,12 +12,7 @@ const newTodos = function (ev) { //continents
 const getTodos = function (ev) { //continents
     let req = Object.create(Ajax);
     req.init();
-    req.getFile("/users/user/:todo", showToDos);
-};
-const download = function (ev) { //continents
-    let req = Object.create(Ajax);
-    req.init();
-    req.getFile("/users/download");
+    req.getFile("/users/user/:email", showToDos);
 };
  
 //Make to do
@@ -28,6 +23,7 @@ const makeToDos = function (e) {
     var day = d.getDate()
     let date = year +"-"+month+"-"+day
 
+    $("name").setAttribute("value", "tinna@mail.com");
     //start dato for to do
     $("start").setAttribute("value", date);
     $("start").setAttribute("min", date);
@@ -36,7 +32,7 @@ const makeToDos = function (e) {
     $("deadline").setAttribute("min", date);
 
 }
-//Sho to do
+//Show to do
 const showToDos = function (e) {
     console.log(e.target.getResponseHeader("Content-Type"));
     let element = $("toDo");
@@ -45,7 +41,7 @@ const showToDos = function (e) {
     }
     let to = JSON.parse(e.target.responseText);
 
-    to.forEach(function (todo) {
+    to.forEach(function (email) {
         let tabel = document.createElement("table");
         let tr = document.createElement("tr");
         let td = document.createElement("td");
@@ -99,7 +95,7 @@ const showToDos = function (e) {
     });
 
 
-
+/*
     let JSONform = document.createElement('form');
         JSONform.setAttribute("method", "POST");
         JSONform.setAttribute("action", "/users/download");
@@ -116,7 +112,7 @@ const showToDos = function (e) {
         JSONform.appendChild(JSONdelButton);
 
         $("toDo").appendChild(JSONform);
-
+*/
 }
 
 function work(){
