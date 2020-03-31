@@ -3,6 +3,7 @@ var router = express.Router();
 const userHandler = require("../models/handleUsers");
 const ToDoHandler = require("../models/handleToDo");
 const { body,validationResult,sanitizeBody,check } = require('express-validator');
+const fs = require('fs');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -146,7 +147,20 @@ router.post('/user',  async function(req, res) { //fjerner en todo
 });
 
 
-
+router.post('/users/download',  async function(req, res) { //show todo
+  let todo = await ToDoHandler.getToDo({}, {sort: {title: 1}});
+  var json = res.json(todo)
+  /*fs.writeFile('TodoList.json', json, (err) => {
+    if (err) throw err;
+    console.log('To do saved!');
+  });
+  res.render('user', { 
+    subtitle: "The user site",
+    scriptLink:'/javascripts/user.js',
+    loggedin: true,
+    who: "Hello " + req.session.user,
+  });*/
+});
 
 
 

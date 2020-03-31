@@ -14,6 +14,11 @@ const getTodos = function (ev) { //continents
     req.init();
     req.getFile("/users/user/:todo", showToDos);
 };
+const download = function (ev) { //continents
+    let req = Object.create(Ajax);
+    req.init();
+    req.getFile("/users/download");
+};
  
 //Make to do
 const makeToDos = function (e) {
@@ -106,6 +111,7 @@ const showToDos = function (e) {
 
         let JSONdelButton = document.createElement('button');
         let JSONdelI = document.createTextNode("Download todo JSON");
+        JSONdelButton.setAttribute("type", "submit");
         JSONdelButton.appendChild(JSONdelI);
         JSONform.appendChild(JSONdelButton);
 
