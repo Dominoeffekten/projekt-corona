@@ -111,9 +111,9 @@ router.get('/user',  async function(req, res) { //start user
   });
 });
 router.get('/user/:email',  async function(req, res) { //show todo - virker ikke
-  console.log(req.session.email);
-  let email = await ToDoHandler.getToDo({userID: req.session.email}, {sort: {deadline: 1, title: 1}});
-  res.json(email);//console.log(todo);
+  let email = req.session.email;
+  let todo = await ToDoHandler.getToDo({userID: req.session.email}, {sort: {deadline: 1, title: 1}});
+  res.json(todo);//console.log(todo);
 });
 
 router.post('/user/',[ //indsætter en todo liste - pending

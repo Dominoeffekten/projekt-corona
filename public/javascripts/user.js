@@ -41,7 +41,7 @@ const showToDos = function (e) {
     }
     let to = JSON.parse(e.target.responseText);
 
-    to.forEach(function (email) {
+    to.forEach(function (todo) {
         let tabel = document.createElement("table");
         let tr = document.createElement("tr");
         let td = document.createElement("td");
