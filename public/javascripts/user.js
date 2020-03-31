@@ -23,8 +23,6 @@ const makeToDos = function (e) {
     var day = d.getDate()
     let date = year +"-"+month+"-"+day
 
-    //brugernavn
-    $("name").value = "new";
     //start dato for to do
     $("start").setAttribute("value", date);
     $("start").setAttribute("min", date);

@@ -72,11 +72,11 @@ router.post('/login', [
         loggedin: true,
         who: "Hello " + req.session.user,
         link:  "/users/user",
-        read: req.session.user
+        read: req.session.email,
       });
     } else if (req.session.role === 'new') {
       res.render('index', { //user is there
-        subtitle: "You must be autozhied by a admin",
+        subtitle: "You must be authorized by a admin",
         loggedin: false,
       });
     } 
