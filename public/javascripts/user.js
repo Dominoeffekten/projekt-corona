@@ -92,6 +92,25 @@ const showToDos = function (e) {
         $("toDo").appendChild(tabel);
         
     });
+
+
+
+    let JSONform = document.createElement('form');
+        JSONform.setAttribute("method", "POST");
+        JSONform.setAttribute("action", "/users/download");
+
+        let JSONinput = document.createElement('input');
+        JSONinput.setAttribute("name", "title");
+        JSONinput.setAttribute("type", "hidden");
+        JSONform.appendChild(JSONinput);
+
+        let JSONdelButton = document.createElement('button');
+        let JSONdelI = document.createTextNode("Download todo JSON");
+        JSONdelButton.appendChild(JSONdelI);
+        JSONform.appendChild(JSONdelButton);
+
+        $("toDo").appendChild(JSONform);
+
 }
 
 function work(){
