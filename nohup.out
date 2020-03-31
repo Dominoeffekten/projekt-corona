@@ -66,3 +66,251 @@
 2020-03-31T09:15:09.375+0200 I  STORAGE  [signalProcessingThread] shutdown: removing fs lock...
 2020-03-31T09:15:09.378+0200 I  CONTROL  [signalProcessingThread] now exiting
 2020-03-31T09:15:09.378+0200 I  CONTROL  [signalProcessingThread] shutting down with code:0
+2020-03-31T11:14:02.131+0200 I  CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2020-03-31T11:14:02.134+0200 I  CONTROL  [initandlisten] MongoDB starting : pid=57645 port=27017 dbpath=/Users/tinnarichter/data/db 64-bit host=Tinnas-MacBook-Pro.local
+2020-03-31T11:14:02.135+0200 I  CONTROL  [initandlisten] db version v4.2.3
+2020-03-31T11:14:02.135+0200 I  CONTROL  [initandlisten] git version: 6874650b362138df74be53d366bbefc321ea32d4
+2020-03-31T11:14:02.135+0200 I  CONTROL  [initandlisten] allocator: system
+2020-03-31T11:14:02.135+0200 I  CONTROL  [initandlisten] modules: none
+2020-03-31T11:14:02.135+0200 I  CONTROL  [initandlisten] build environment:
+2020-03-31T11:14:02.135+0200 I  CONTROL  [initandlisten]     distarch: x86_64
+2020-03-31T11:14:02.135+0200 I  CONTROL  [initandlisten]     target_arch: x86_64
+2020-03-31T11:14:02.135+0200 I  CONTROL  [initandlisten] options: { storage: { dbPath: "/Users/tinnarichter/data/db" } }
+2020-03-31T11:14:02.137+0200 I  STORAGE  [initandlisten] Detected data files in /Users/tinnarichter/data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2020-03-31T11:14:02.137+0200 I  STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7680M,cache_overflow=(file_max=0M),session_max=33000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000,close_scan_interval=10,close_handle_minimum=250),statistics_log=(wait=0),verbose=[recovery_progress,checkpoint_progress],
+2020-03-31T11:14:02.639+0200 I  STORAGE  [initandlisten] WiredTiger message [1585646042:639278][57645:0x114f5edc0], txn-recover: Recovering log 5 through 6
+2020-03-31T11:14:02.696+0200 I  STORAGE  [initandlisten] WiredTiger message [1585646042:696676][57645:0x114f5edc0], txn-recover: Recovering log 6 through 6
+2020-03-31T11:14:02.753+0200 I  STORAGE  [initandlisten] WiredTiger message [1585646042:753016][57645:0x114f5edc0], txn-recover: Main recovery loop: starting at 5/5120 to 6/256
+2020-03-31T11:14:02.830+0200 I  STORAGE  [initandlisten] WiredTiger message [1585646042:830419][57645:0x114f5edc0], txn-recover: Recovering log 5 through 6
+2020-03-31T11:14:02.884+0200 I  STORAGE  [initandlisten] WiredTiger message [1585646042:884601][57645:0x114f5edc0], txn-recover: Recovering log 6 through 6
+2020-03-31T11:14:02.925+0200 I  STORAGE  [initandlisten] WiredTiger message [1585646042:924995][57645:0x114f5edc0], txn-recover: Set global recovery timestamp: (0, 0)
+2020-03-31T11:14:03.000+0200 I  RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2020-03-31T11:14:03.009+0200 I  STORAGE  [initandlisten] Timestamp monitor starting
+2020-03-31T11:14:03.010+0200 I  CONTROL  [initandlisten] 
+2020-03-31T11:14:03.010+0200 I  CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2020-03-31T11:14:03.010+0200 I  CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2020-03-31T11:14:03.010+0200 I  CONTROL  [initandlisten] 
+2020-03-31T11:14:03.010+0200 I  CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2020-03-31T11:14:03.010+0200 I  CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server. 
+2020-03-31T11:14:03.010+0200 I  CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP 
+2020-03-31T11:14:03.010+0200 I  CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2020-03-31T11:14:03.010+0200 I  CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2020-03-31T11:14:03.010+0200 I  CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2020-03-31T11:14:03.010+0200 I  CONTROL  [initandlisten] 
+2020-03-31T11:14:03.010+0200 I  CONTROL  [initandlisten] 
+2020-03-31T11:14:03.010+0200 I  CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2020-03-31T11:14:03.015+0200 I  SHARDING [initandlisten] Marking collection local.system.replset as collection version: <unsharded>
+2020-03-31T11:14:03.016+0200 I  STORAGE  [initandlisten] Flow Control is enabled on this deployment.
+2020-03-31T11:14:03.016+0200 I  SHARDING [initandlisten] Marking collection admin.system.roles as collection version: <unsharded>
+2020-03-31T11:14:03.016+0200 I  SHARDING [initandlisten] Marking collection admin.system.version as collection version: <unsharded>
+2020-03-31T11:14:03.018+0200 I  SHARDING [initandlisten] Marking collection local.startup_log as collection version: <unsharded>
+2020-03-31T11:14:03.018+0200 I  FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/Users/tinnarichter/data/db/diagnostic.data'
+2020-03-31T11:14:03.019+0200 I  SHARDING [LogicalSessionCacheRefresh] Marking collection config.system.sessions as collection version: <unsharded>
+2020-03-31T11:14:03.019+0200 I  NETWORK  [listener] Listening on /tmp/mongodb-27017.sock
+2020-03-31T11:14:03.019+0200 I  NETWORK  [listener] Listening on 127.0.0.1
+2020-03-31T11:14:03.019+0200 I  NETWORK  [listener] waiting for connections on port 27017
+2020-03-31T11:14:03.019+0200 I  SHARDING [LogicalSessionCacheReap] Marking collection config.transactions as collection version: <unsharded>
+2020-03-31T11:14:04.015+0200 I  SHARDING [ftdc] Marking collection local.oplog.rs as collection version: <unsharded>
+2020-03-31T11:14:25.064+0200 I  CONTROL  [signalProcessingThread] got signal 2 (Interrupt: 2), will terminate after current cmd ends
+2020-03-31T11:14:25.065+0200 I  NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2020-03-31T11:14:25.065+0200 I  NETWORK  [listener] removing socket file: /tmp/mongodb-27017.sock
+2020-03-31T11:14:25.065+0200 I  -        [signalProcessingThread] Stopping further Flow Control ticket acquisitions.
+2020-03-31T11:14:25.065+0200 I  CONTROL  [signalProcessingThread] Shutting down free monitoring
+2020-03-31T11:14:25.065+0200 I  FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2020-03-31T11:14:25.067+0200 I  STORAGE  [signalProcessingThread] Deregistering all the collections
+2020-03-31T11:14:25.067+0200 I  STORAGE  [signalProcessingThread] Timestamp monitor shutting down
+2020-03-31T11:14:25.067+0200 I  STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2020-03-31T11:14:25.072+0200 I  STORAGE  [signalProcessingThread] Shutting down session sweeper thread
+2020-03-31T11:14:25.072+0200 I  STORAGE  [signalProcessingThread] Finished shutting down session sweeper thread
+2020-03-31T11:14:25.072+0200 I  STORAGE  [signalProcessingThread] Shutting down journal flusher thread
+2020-03-31T11:14:25.085+0200 I  STORAGE  [signalProcessingThread] Finished shutting down journal flusher thread
+2020-03-31T11:14:25.085+0200 I  STORAGE  [signalProcessingThread] Shutting down checkpoint thread
+2020-03-31T11:14:25.085+0200 I  STORAGE  [signalProcessingThread] Finished shutting down checkpoint thread
+2020-03-31T11:14:25.188+0200 I  STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2020-03-31T11:14:25.192+0200 I  CONTROL  [signalProcessingThread] now exiting
+2020-03-31T11:14:25.192+0200 I  CONTROL  [signalProcessingThread] shutting down with code:0
+2020-03-31T11:18:01.688+0200 I  CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2020-03-31T11:18:01.694+0200 I  CONTROL  [initandlisten] MongoDB starting : pid=59484 port=27017 dbpath=/Users/tinnarichter/data/db 64-bit host=Tinnas-MacBook-Pro.local
+2020-03-31T11:18:01.694+0200 I  CONTROL  [initandlisten] db version v4.2.3
+2020-03-31T11:18:01.694+0200 I  CONTROL  [initandlisten] git version: 6874650b362138df74be53d366bbefc321ea32d4
+2020-03-31T11:18:01.694+0200 I  CONTROL  [initandlisten] allocator: system
+2020-03-31T11:18:01.694+0200 I  CONTROL  [initandlisten] modules: none
+2020-03-31T11:18:01.694+0200 I  CONTROL  [initandlisten] build environment:
+2020-03-31T11:18:01.694+0200 I  CONTROL  [initandlisten]     distarch: x86_64
+2020-03-31T11:18:01.694+0200 I  CONTROL  [initandlisten]     target_arch: x86_64
+2020-03-31T11:18:01.694+0200 I  CONTROL  [initandlisten] options: { storage: { dbPath: "/Users/tinnarichter/data/db" } }
+2020-03-31T11:18:01.695+0200 I  STORAGE  [initandlisten] Detected data files in /Users/tinnarichter/data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2020-03-31T11:18:01.695+0200 I  STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7680M,cache_overflow=(file_max=0M),session_max=33000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000,close_scan_interval=10,close_handle_minimum=250),statistics_log=(wait=0),verbose=[recovery_progress,checkpoint_progress],
+2020-03-31T11:18:02.220+0200 I  STORAGE  [initandlisten] WiredTiger message [1585646282:220962][59484:0x10e9e0dc0], txn-recover: Recovering log 6 through 7
+2020-03-31T11:18:02.261+0200 I  STORAGE  [initandlisten] WiredTiger message [1585646282:261518][59484:0x10e9e0dc0], txn-recover: Recovering log 7 through 7
+2020-03-31T11:18:02.313+0200 I  STORAGE  [initandlisten] WiredTiger message [1585646282:313498][59484:0x10e9e0dc0], txn-recover: Main recovery loop: starting at 6/5120 to 7/256
+2020-03-31T11:18:02.389+0200 I  STORAGE  [initandlisten] WiredTiger message [1585646282:389983][59484:0x10e9e0dc0], txn-recover: Recovering log 6 through 7
+2020-03-31T11:18:02.447+0200 I  STORAGE  [initandlisten] WiredTiger message [1585646282:447554][59484:0x10e9e0dc0], txn-recover: Recovering log 7 through 7
+2020-03-31T11:18:02.486+0200 I  STORAGE  [initandlisten] WiredTiger message [1585646282:486054][59484:0x10e9e0dc0], txn-recover: Set global recovery timestamp: (0, 0)
+2020-03-31T11:18:02.561+0200 I  RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2020-03-31T11:18:02.570+0200 I  STORAGE  [initandlisten] Timestamp monitor starting
+2020-03-31T11:18:02.572+0200 I  CONTROL  [initandlisten] 
+2020-03-31T11:18:02.572+0200 I  CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2020-03-31T11:18:02.573+0200 I  CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2020-03-31T11:18:02.573+0200 I  CONTROL  [initandlisten] 
+2020-03-31T11:18:02.573+0200 I  CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2020-03-31T11:18:02.573+0200 I  CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server. 
+2020-03-31T11:18:02.573+0200 I  CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP 
+2020-03-31T11:18:02.573+0200 I  CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2020-03-31T11:18:02.573+0200 I  CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2020-03-31T11:18:02.573+0200 I  CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2020-03-31T11:18:02.573+0200 I  CONTROL  [initandlisten] 
+2020-03-31T11:18:02.573+0200 I  CONTROL  [initandlisten] 
+2020-03-31T11:18:02.573+0200 I  CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2020-03-31T11:18:02.577+0200 I  SHARDING [initandlisten] Marking collection local.system.replset as collection version: <unsharded>
+2020-03-31T11:18:02.579+0200 I  STORAGE  [initandlisten] Flow Control is enabled on this deployment.
+2020-03-31T11:18:02.579+0200 I  SHARDING [initandlisten] Marking collection admin.system.roles as collection version: <unsharded>
+2020-03-31T11:18:02.579+0200 I  SHARDING [initandlisten] Marking collection admin.system.version as collection version: <unsharded>
+2020-03-31T11:18:02.580+0200 I  SHARDING [initandlisten] Marking collection local.startup_log as collection version: <unsharded>
+2020-03-31T11:18:02.580+0200 I  FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/Users/tinnarichter/data/db/diagnostic.data'
+2020-03-31T11:18:02.581+0200 I  SHARDING [LogicalSessionCacheRefresh] Marking collection config.system.sessions as collection version: <unsharded>
+2020-03-31T11:18:02.582+0200 I  NETWORK  [listener] Listening on /tmp/mongodb-27017.sock
+2020-03-31T11:18:02.582+0200 I  NETWORK  [listener] Listening on 127.0.0.1
+2020-03-31T11:18:02.582+0200 I  NETWORK  [listener] waiting for connections on port 27017
+2020-03-31T11:18:02.582+0200 I  SHARDING [LogicalSessionCacheReap] Marking collection config.transactions as collection version: <unsharded>
+2020-03-31T11:18:03.002+0200 I  SHARDING [ftdc] Marking collection local.oplog.rs as collection version: <unsharded>
+2020-03-31T11:18:17.525+0200 I  CONTROL  [signalProcessingThread] got signal 2 (Interrupt: 2), will terminate after current cmd ends
+2020-03-31T11:18:17.525+0200 I  NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2020-03-31T11:18:17.525+0200 I  NETWORK  [listener] removing socket file: /tmp/mongodb-27017.sock
+2020-03-31T11:18:17.525+0200 I  -        [signalProcessingThread] Stopping further Flow Control ticket acquisitions.
+2020-03-31T11:18:17.525+0200 I  CONTROL  [signalProcessingThread] Shutting down free monitoring
+2020-03-31T11:18:17.526+0200 I  FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2020-03-31T11:18:17.527+0200 I  STORAGE  [signalProcessingThread] Deregistering all the collections
+2020-03-31T11:18:17.527+0200 I  STORAGE  [signalProcessingThread] Timestamp monitor shutting down
+2020-03-31T11:18:17.528+0200 I  STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2020-03-31T11:18:17.537+0200 I  STORAGE  [signalProcessingThread] Shutting down session sweeper thread
+2020-03-31T11:18:17.537+0200 I  STORAGE  [signalProcessingThread] Finished shutting down session sweeper thread
+2020-03-31T11:18:17.537+0200 I  STORAGE  [signalProcessingThread] Shutting down journal flusher thread
+2020-03-31T11:18:17.582+0200 I  STORAGE  [signalProcessingThread] Finished shutting down journal flusher thread
+2020-03-31T11:18:17.582+0200 I  STORAGE  [signalProcessingThread] Shutting down checkpoint thread
+2020-03-31T11:18:17.582+0200 I  STORAGE  [signalProcessingThread] Finished shutting down checkpoint thread
+2020-03-31T11:18:17.663+0200 I  STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2020-03-31T11:18:17.666+0200 I  CONTROL  [signalProcessingThread] now exiting
+2020-03-31T11:18:17.667+0200 I  CONTROL  [signalProcessingThread] shutting down with code:0
+2020-03-31T12:31:30.282+0200 I  CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2020-03-31T12:31:30.288+0200 I  CONTROL  [initandlisten] MongoDB starting : pid=59562 port=27017 dbpath=/Users/tinnarichter/data/db 64-bit host=Tinnas-MacBook-Pro.local
+2020-03-31T12:31:30.288+0200 I  CONTROL  [initandlisten] db version v4.2.3
+2020-03-31T12:31:30.288+0200 I  CONTROL  [initandlisten] git version: 6874650b362138df74be53d366bbefc321ea32d4
+2020-03-31T12:31:30.288+0200 I  CONTROL  [initandlisten] allocator: system
+2020-03-31T12:31:30.288+0200 I  CONTROL  [initandlisten] modules: none
+2020-03-31T12:31:30.288+0200 I  CONTROL  [initandlisten] build environment:
+2020-03-31T12:31:30.288+0200 I  CONTROL  [initandlisten]     distarch: x86_64
+2020-03-31T12:31:30.288+0200 I  CONTROL  [initandlisten]     target_arch: x86_64
+2020-03-31T12:31:30.288+0200 I  CONTROL  [initandlisten] options: { storage: { dbPath: "/Users/tinnarichter/data/db" } }
+2020-03-31T12:31:30.289+0200 I  STORAGE  [initandlisten] Detected data files in /Users/tinnarichter/data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2020-03-31T12:31:30.289+0200 I  STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7680M,cache_overflow=(file_max=0M),session_max=33000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000,close_scan_interval=10,close_handle_minimum=250),statistics_log=(wait=0),verbose=[recovery_progress,checkpoint_progress],
+2020-03-31T12:31:30.803+0200 I  STORAGE  [initandlisten] WiredTiger message [1585650690:803756][59562:0x10b9f3dc0], txn-recover: Recovering log 7 through 8
+2020-03-31T12:31:30.839+0200 I  STORAGE  [initandlisten] WiredTiger message [1585650690:839547][59562:0x10b9f3dc0], txn-recover: Recovering log 8 through 8
+2020-03-31T12:31:30.894+0200 I  STORAGE  [initandlisten] WiredTiger message [1585650690:894582][59562:0x10b9f3dc0], txn-recover: Main recovery loop: starting at 7/5120 to 8/256
+2020-03-31T12:31:30.966+0200 I  STORAGE  [initandlisten] WiredTiger message [1585650690:966050][59562:0x10b9f3dc0], txn-recover: Recovering log 7 through 8
+2020-03-31T12:31:31.014+0200 I  STORAGE  [initandlisten] WiredTiger message [1585650691:14875][59562:0x10b9f3dc0], txn-recover: Recovering log 8 through 8
+2020-03-31T12:31:31.054+0200 I  STORAGE  [initandlisten] WiredTiger message [1585650691:54122][59562:0x10b9f3dc0], txn-recover: Set global recovery timestamp: (0, 0)
+2020-03-31T12:31:31.130+0200 I  RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2020-03-31T12:31:31.139+0200 I  STORAGE  [initandlisten] Timestamp monitor starting
+2020-03-31T12:31:31.140+0200 I  CONTROL  [initandlisten] 
+2020-03-31T12:31:31.141+0200 I  CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2020-03-31T12:31:31.141+0200 I  CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2020-03-31T12:31:31.141+0200 I  CONTROL  [initandlisten] 
+2020-03-31T12:31:31.141+0200 I  CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2020-03-31T12:31:31.141+0200 I  CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server. 
+2020-03-31T12:31:31.141+0200 I  CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP 
+2020-03-31T12:31:31.141+0200 I  CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2020-03-31T12:31:31.141+0200 I  CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2020-03-31T12:31:31.141+0200 I  CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2020-03-31T12:31:31.141+0200 I  CONTROL  [initandlisten] 
+2020-03-31T12:31:31.141+0200 I  CONTROL  [initandlisten] 
+2020-03-31T12:31:31.141+0200 I  CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2020-03-31T12:31:31.145+0200 I  SHARDING [initandlisten] Marking collection local.system.replset as collection version: <unsharded>
+2020-03-31T12:31:31.147+0200 I  STORAGE  [initandlisten] Flow Control is enabled on this deployment.
+2020-03-31T12:31:31.147+0200 I  SHARDING [initandlisten] Marking collection admin.system.roles as collection version: <unsharded>
+2020-03-31T12:31:31.147+0200 I  SHARDING [initandlisten] Marking collection admin.system.version as collection version: <unsharded>
+2020-03-31T12:31:31.148+0200 I  SHARDING [initandlisten] Marking collection local.startup_log as collection version: <unsharded>
+2020-03-31T12:31:31.148+0200 I  FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/Users/tinnarichter/data/db/diagnostic.data'
+2020-03-31T12:31:31.150+0200 I  SHARDING [LogicalSessionCacheRefresh] Marking collection config.system.sessions as collection version: <unsharded>
+2020-03-31T12:31:31.150+0200 I  NETWORK  [listener] Listening on /tmp/mongodb-27017.sock
+2020-03-31T12:31:31.150+0200 I  NETWORK  [listener] Listening on 127.0.0.1
+2020-03-31T12:31:31.150+0200 I  SHARDING [LogicalSessionCacheReap] Marking collection config.transactions as collection version: <unsharded>
+2020-03-31T12:31:31.150+0200 I  NETWORK  [listener] waiting for connections on port 27017
+2020-03-31T12:31:32.001+0200 I  SHARDING [ftdc] Marking collection local.oplog.rs as collection version: <unsharded>
+2020-03-31T12:31:33.574+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:62669 #1 (1 connection now open)
+2020-03-31T12:31:33.580+0200 I  NETWORK  [conn1] received client metadata from 127.0.0.1:62669 conn1: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "4.2.3" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "19.3.0" } }
+2020-03-31T12:32:04.197+0200 I  NETWORK  [conn1] end connection 127.0.0.1:62669 (0 connections now open)
+2020-03-31T12:33:00.612+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:62700 #2 (1 connection now open)
+2020-03-31T12:33:00.616+0200 I  NETWORK  [conn2] received client metadata from 127.0.0.1:62700 conn2: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T12:33:00.638+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:62701 #3 (2 connections now open)
+2020-03-31T12:33:00.639+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:62702 #4 (3 connections now open)
+2020-03-31T12:33:00.640+0200 I  NETWORK  [conn3] received client metadata from 127.0.0.1:62701 conn3: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T12:33:00.640+0200 I  NETWORK  [conn4] received client metadata from 127.0.0.1:62702 conn4: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T12:33:00.641+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:62703 #5 (4 connections now open)
+2020-03-31T12:33:00.643+0200 I  SHARDING [conn3] Marking collection user.user as collection version: <unsharded>
+2020-03-31T12:33:00.644+0200 I  SHARDING [conn4] Marking collection user.todo as collection version: <unsharded>
+2020-03-31T12:33:00.644+0200 I  NETWORK  [conn5] received client metadata from 127.0.0.1:62703 conn5: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T12:33:00.648+0200 I  STORAGE  [conn3] createCollection: user.user with generated UUID: 00bdf15b-65d6-4c45-aa7b-112f31bc83a9 and options: {}
+2020-03-31T12:33:00.651+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:62704 #6 (5 connections now open)
+2020-03-31T12:33:00.652+0200 I  NETWORK  [conn6] received client metadata from 127.0.0.1:62704 conn6: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T12:33:00.652+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:62705 #7 (6 connections now open)
+2020-03-31T12:33:00.653+0200 I  NETWORK  [conn7] received client metadata from 127.0.0.1:62705 conn7: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T12:33:00.678+0200 I  INDEX    [conn3] index build: done building index _id_ on ns user.user
+2020-03-31T12:33:00.678+0200 I  STORAGE  [conn5] createCollection: user.todo with provided UUID: 64f98813-ebe2-4882-9070-9ed7aaec50e0 and options: { uuid: UUID("64f98813-ebe2-4882-9070-9ed7aaec50e0") }
+2020-03-31T12:33:00.682+0200 I  NETWORK  [conn2] end connection 127.0.0.1:62700 (5 connections now open)
+2020-03-31T12:33:00.683+0200 I  NETWORK  [conn6] end connection 127.0.0.1:62704 (4 connections now open)
+2020-03-31T12:33:00.683+0200 I  NETWORK  [conn7] end connection 127.0.0.1:62705 (3 connections now open)
+2020-03-31T12:33:00.683+0200 I  NETWORK  [conn3] end connection 127.0.0.1:62701 (2 connections now open)
+2020-03-31T12:33:00.726+0200 I  INDEX    [conn5] index build: done building index _id_ on ns user.todo
+2020-03-31T12:33:00.763+0200 I  INDEX    [conn4] index build: starting on user.user properties: { v: 2, unique: true, key: { email: 1 }, name: "email_1", ns: "user.user", background: true } using method: Hybrid
+2020-03-31T12:33:00.766+0200 I  INDEX    [conn4] build may temporarily use up to 200 megabytes of RAM
+2020-03-31T12:33:00.766+0200 I  INDEX    [conn4] index build: collection scan done. scanned 1 total records in 0 seconds
+2020-03-31T12:33:00.776+0200 I  INDEX    [conn4] index build: inserted 1 keys from external sorter into index in 0 seconds
+2020-03-31T12:33:00.788+0200 I  INDEX    [conn5] index build: starting on user.todo properties: { v: 2, unique: true, key: { title: 1 }, name: "title_1", ns: "user.todo", background: true } using method: Hybrid
+2020-03-31T12:33:00.790+0200 I  INDEX    [conn5] build may temporarily use up to 200 megabytes of RAM
+2020-03-31T12:33:00.791+0200 I  INDEX    [conn5] index build: collection scan done. scanned 0 total records in 0 seconds
+2020-03-31T12:33:00.794+0200 I  INDEX    [conn4] index build: done building index email_1 on ns user.user
+2020-03-31T12:33:00.794+0200 I  INDEX    [conn5] index build: inserted 0 keys from external sorter into index in 0 seconds
+2020-03-31T12:33:00.810+0200 I  INDEX    [conn5] index build: done building index title_1 on ns user.todo
+2020-03-31T12:33:00.819+0200 I  COMMAND  [conn4] command user.user command: createIndexes { createIndexes: "user", indexes: [ { name: "email_1", key: { email: 1 }, unique: true, background: true } ], lsid: { id: UUID("c20def0d-f8fc-42e7-85cd-f7ebdb63e340") }, $db: "user" } numYields:0 reslen:114 locks:{ ParallelBatchWriterMode: { acquireCount: { r: 2 } }, ReplicationStateTransition: { acquireCount: { w: 3 } }, Global: { acquireCount: { r: 1, w: 2 } }, Database: { acquireCount: { r: 1, w: 2 }, acquireWaitCount: { w: 1 }, timeAcquiringMicros: { w: 28583 } }, Collection: { acquireCount: { r: 2, w: 1, R: 1, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 217 } }, Mutex: { acquireCount: { r: 4 } } } flowControl:{ acquireCount: 1 } storage:{} protocol:op_msg 169ms
+2020-03-31T12:33:00.820+0200 I  NETWORK  [conn4] end connection 127.0.0.1:62702 (1 connection now open)
+2020-03-31T12:33:00.836+0200 I  COMMAND  [conn5] command user.todo command: createIndexes { createIndexes: "todo", indexes: [ { name: "title_1", key: { title: 1 }, unique: true, background: true } ], lsid: { id: UUID("5916e94a-87c7-4515-8b52-dc41d25e892c") }, $db: "user" } numYields:0 reslen:114 locks:{ ParallelBatchWriterMode: { acquireCount: { r: 2 } }, ReplicationStateTransition: { acquireCount: { w: 3 } }, Global: { acquireCount: { r: 1, w: 2 } }, Database: { acquireCount: { r: 1, w: 2 }, acquireWaitCount: { w: 1 }, timeAcquiringMicros: { w: 28510 } }, Collection: { acquireCount: { r: 4, w: 1, R: 1, W: 2 } }, Mutex: { acquireCount: { r: 4 } } } flowControl:{ acquireCount: 1 } storage:{ timeWaitingMicros: { handleLock: 21 } } protocol:op_msg 186ms
+2020-03-31T12:33:00.837+0200 I  NETWORK  [conn5] end connection 127.0.0.1:62703 (0 connections now open)
+2020-03-31T12:33:09.119+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:62709 #8 (1 connection now open)
+2020-03-31T12:33:09.119+0200 I  NETWORK  [conn8] received client metadata from 127.0.0.1:62709 conn8: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T12:33:09.123+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:62710 #9 (2 connections now open)
+2020-03-31T12:33:09.123+0200 I  NETWORK  [conn9] received client metadata from 127.0.0.1:62710 conn9: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T12:33:09.123+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:62711 #10 (3 connections now open)
+2020-03-31T12:33:09.124+0200 I  NETWORK  [conn10] received client metadata from 127.0.0.1:62711 conn10: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T12:33:09.127+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:62712 #11 (4 connections now open)
+2020-03-31T12:33:09.127+0200 I  NETWORK  [conn11] received client metadata from 127.0.0.1:62712 conn11: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T12:33:09.130+0200 I  NETWORK  [conn8] end connection 127.0.0.1:62709 (3 connections now open)
+2020-03-31T12:33:09.169+0200 I  INDEX    [conn10] index build: starting on user.user properties: { v: 2, unique: true, key: { password: 1 }, name: "password_1", ns: "user.user", background: true } using method: Hybrid
+2020-03-31T12:33:09.169+0200 I  INDEX    [conn10] build may temporarily use up to 200 megabytes of RAM
+2020-03-31T12:33:09.169+0200 I  INDEX    [conn10] index build: collection scan done. scanned 1 total records in 0 seconds
+2020-03-31T12:33:09.169+0200 I  INDEX    [conn10] index build: inserted 1 keys from external sorter into index in 0 seconds
+2020-03-31T12:33:09.175+0200 I  INDEX    [conn10] index build: done building index password_1 on ns user.user
+2020-03-31T12:33:09.231+0200 I  NETWORK  [conn9] end connection 127.0.0.1:62710 (2 connections now open)
+2020-03-31T12:33:09.231+0200 I  NETWORK  [conn11] end connection 127.0.0.1:62712 (1 connection now open)
+2020-03-31T12:33:09.231+0200 I  NETWORK  [conn10] end connection 127.0.0.1:62711 (0 connections now open)
+2020-03-31T12:34:10.955+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:62728 #12 (1 connection now open)
+2020-03-31T12:34:10.956+0200 I  NETWORK  [conn12] received client metadata from 127.0.0.1:62728 conn12: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T12:34:10.958+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:62729 #13 (2 connections now open)
+2020-03-31T12:34:10.959+0200 I  NETWORK  [conn13] received client metadata from 127.0.0.1:62729 conn13: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T12:34:10.960+0200 I  NETWORK  [conn12] end connection 127.0.0.1:62728 (1 connection now open)
+2020-03-31T12:34:11.055+0200 I  NETWORK  [conn13] end connection 127.0.0.1:62729 (0 connections now open)
+2020-03-31T19:14:01.514+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:65325 #14 (1 connection now open)
+2020-03-31T19:14:01.518+0200 I  NETWORK  [conn14] received client metadata from 127.0.0.1:65325 conn14: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T19:14:01.533+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:65326 #15 (2 connections now open)
+2020-03-31T19:14:01.533+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:65327 #16 (3 connections now open)
+2020-03-31T19:14:01.533+0200 I  NETWORK  [conn15] received client metadata from 127.0.0.1:65326 conn15: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T19:14:01.534+0200 I  NETWORK  [conn16] received client metadata from 127.0.0.1:65327 conn16: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T19:14:01.534+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:65328 #17 (4 connections now open)
+2020-03-31T19:14:01.536+0200 I  NETWORK  [conn17] received client metadata from 127.0.0.1:65328 conn17: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T19:14:01.540+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:65329 #18 (5 connections now open)
+2020-03-31T19:14:01.541+0200 I  NETWORK  [conn18] received client metadata from 127.0.0.1:65329 conn18: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-03-31T19:14:01.546+0200 I  NETWORK  [conn14] end connection 127.0.0.1:65325 (4 connections now open)
+2020-03-31T19:14:01.665+0200 I  NETWORK  [conn17] end connection 127.0.0.1:65328 (3 connections now open)
+2020-03-31T19:14:01.665+0200 I  NETWORK  [conn15] end connection 127.0.0.1:65326 (2 connections now open)
+2020-03-31T19:14:01.665+0200 I  NETWORK  [conn18] end connection 127.0.0.1:65329 (1 connection now open)
+2020-03-31T19:14:01.665+0200 I  NETWORK  [conn16] end connection 127.0.0.1:65327 (0 connections now open)
