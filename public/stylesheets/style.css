@@ -41,17 +41,15 @@ input {
     display:block;
     padding:5px;
 }
-.delButton, .upButton {
+.delButton {
     font-size:20px;
     background-color:transparent;
     border:none;
-    text-align:center;
-    display:block;
-    margin:auto;
+    float: right;
 }
 table{
     padding: 14px;
-    float: right;
+    float: left;
     margin: 20px;
     background-color: #FFFA94;
     box-shadow: #cfcfcf 5px 5px 15px;
