@@ -28,7 +28,7 @@ main {
 }
 
 input {
-    width:30%;
+    width: auto;
     padding:5px;
     margin:5px 0;
     border:1px solid grey;
@@ -47,7 +47,7 @@ input {
     border:none;
     float: right;
 }
-table{
+table:not(#adminTable) {
     padding: 14px;
     float: left;
     margin: 20px;
@@ -56,4 +56,12 @@ table{
 }
 .wrong{
     color: red;
+}
+
+#adminUser {
+    width: 100%;
+}
+
+input #adminUser {
+    width: 400px;
 }
