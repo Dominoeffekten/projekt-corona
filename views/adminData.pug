@@ -15,15 +15,15 @@ block content
                 tr
                     td.col_l First name
                     td
-                        input(type='text' name='localname' value=`${user[0].firstName}`)
+                        input(type='text' name='firstName' value=`${user[0].firstName}`)
                 tr
                     td.col_l Last name
                     td
-                        input(type='text' name='code' value=`${user[0].lastName}`)
+                        input(type='text' name='lastName' value=`${user[0].lastName}`)
                 tr
                     td.col_l Email
                     td
-                        input(type='text' name='region' value=`${user[0].email}` required)
+                        input(type='text' name='email' value=`${user[0].email}` required)
                 tr
                     td
                         input(type='submit' value='Update data' class='go')

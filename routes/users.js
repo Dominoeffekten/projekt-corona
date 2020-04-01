@@ -103,9 +103,10 @@ router.post('/adminData', async function(req, res, next) { //update the user
   });
 });
 router.post('/admin', async function(req, res) { //start login
-  let postUser = await userHandler.changeUser(req);
+  console.log(req.body);
+  let postUser = await userHandler.changeUser(req.body);
   console.log(postUser);
-  return res.redirect('/admin'); // skip the receipt, return to fp
+  return res.redirect('admin'); // skip the receipt, return to fp
 });
 
 /* user */
