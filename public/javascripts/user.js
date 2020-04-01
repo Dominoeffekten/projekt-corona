@@ -41,8 +41,12 @@ const showToDos = function (e) {
     }
     let to = JSON.parse(e.target.responseText);
 
+    let arr = ["#FFFA94", "#FFAAFB", "#AAFFAD", "#AABFFF"];
+    var randomValue = arr[Math.floor(arr.length * Math.random())];
+
     to.forEach(function (todo) {
         let tabel = document.createElement("table");
+        tabel.setAttribute("style", "background-color:"+randomValue);
         let tr = document.createElement("tr");
         let td = document.createElement("td");
 
