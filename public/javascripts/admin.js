@@ -38,7 +38,7 @@ const showToDos = function (e) {
     let users = JSON.parse(e.target.responseText);
 
     let tabel = document.createElement("table");
-    tabel.setAttribute("id", "adminTabel");
+    tabel.setAttribute("id", "adminTable");
     let tr  = document.createElement('tr');
     let th = document.createElement("th");
     let p = document.createTextNode("Title");
@@ -50,10 +50,6 @@ const showToDos = function (e) {
     th1.appendChild(p1);
     tr.appendChild(th1);
 
-    let th2 = document.createElement("th");
-    let p2 = document.createTextNode("Update");
-    th2.appendChild(p2);
-    tr.appendChild(th2);
 
     tabel.appendChild(tr);
 
@@ -83,7 +79,7 @@ const showToDos = function (e) {
         
         let delButton = document.createElement('button');
         delButton.setAttribute("class", "delButton");
-        let delI = document.createTextNode("X");
+        let delI = document.createTextNode("Update");
         form.addEventListener('click', readData);
         delButton.appendChild(delI);
         form.appendChild(delButton);
