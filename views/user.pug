@@ -2,7 +2,7 @@ extends layout
 
 block content
     h2= "Add a new to do"
-    form(action="/users/user/" + read method="POST")
+    form(action="/users/user/" + read method="POST" id="userForm")
         label User
         input(type="text", name="name" id="name" value=read readonly)
         br 

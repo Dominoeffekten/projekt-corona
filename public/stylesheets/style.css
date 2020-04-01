@@ -36,7 +36,7 @@ input, select {
     border: none;
     background-color: #4f5c87;
     color: white;
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 10px;
 }
 #submitButton {
@@ -62,10 +62,17 @@ table:not(#adminTable) {
     color: red;
 }
 
-#adminUser {
-    width: 100%;
-    background-color: #313966;
+#adminUser, #userForm {
+    width: 50%;
+    background: rgb(47,56,100);
+    background: radial-gradient(circle, rgba(47,56,100,1) 50%, rgba(24,31,74,1) 100%);
     color: white;
+    margin: auto;
+    padding: 3%;
+    padding-left: 8%;
+    margin-top: 3%;
+    box-shadow: 5px 5px 15px #cfcfcf;
+    border-radius: 10px;
 }
 
 input #adminUser {
@@ -78,5 +85,12 @@ input #adminUser {
     color: white;
     border: none;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
+    margin-left: 103%;
+    margin-top: 15%;
+}
+
+h1, h2 {
+    color: #f76bac;
+    margin-left: 25.1%;
 }
