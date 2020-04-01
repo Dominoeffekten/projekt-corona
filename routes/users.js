@@ -160,13 +160,17 @@ router.post('/download/:type',  async function(req, res) { //download mongo
   console.log(req.body.email);
   let url = req.url.substring(10);
     if(url = "json"){
-    let todo = await ToDoHandler.getToDo({userID: req.body.email}, {sort: {title: 1}});
-    var json = res.json(todo)
-    fs.writeFile('todoList.json', todo, (err) => {
-      if (err) throw err;
-      console.log('To do saved!');
-    });
-  }
+      let todo = await ToDoHandler.getToDo({userID: req.body.email}, {sort: {title: 1}});
+      var json = res.json(todo);
+      fs.writeFile('todoList.json', todo, (err) => {
+        if (err) throw err;
+        console.log('To do saved!');
+      });
+    }
+    if(url = "json"){
+      let todo = await ToDoHandler.getToDo({userID: req.body.email}, {sort: {title: 1}});
+      
+    }
   //return res.redirect('/users/user');*/
 });
 

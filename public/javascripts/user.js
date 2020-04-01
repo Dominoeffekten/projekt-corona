@@ -53,7 +53,7 @@ const showToDos = function (e) {
 
         let form = document.createElement('form');
         form.setAttribute("method", "POST");
-        form.setAttribute("action", "/users/user/delete");
+        form.setAttribute("action", "/user/delete");
         //form.addEventListener('click', getTodos);
 
         let input = document.createElement('input');
