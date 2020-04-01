@@ -12,7 +12,13 @@ const newTodos = function (ev) { //continents
 const getTodos = function (ev) { //continents
     let req = Object.create(Ajax);
     req.init();
-    req.getFile("/users/admin/:user", showToDos);
+    req.getFile("/users/admin/user", showToDos);
+};
+
+const readData = function (ev) { //Continents
+    let req = Object.create(Ajax);
+    req.init();
+    req.getFile(`/adminData`, showData);
 };
  
 //Make to do
@@ -66,7 +72,7 @@ const showToDos = function (e) {
         let td3 = document.createElement('td');
         let form = document.createElement('form');
         form.setAttribute("method", "POST");
-        form.setAttribute("action", "/users/admin/:user");
+        form.setAttribute("action", "/users/adminData");
 
         let input = document.createElement('input');
         input.setAttribute("value", user.email);
@@ -77,6 +83,7 @@ const showToDos = function (e) {
         let delButton = document.createElement('button');
         delButton.setAttribute("class", "delButton");
         let delI = document.createTextNode("X");
+        form.addEventListener('click', readData);
         delButton.appendChild(delI);
         form.appendChild(delButton);
 
@@ -88,6 +95,13 @@ const showToDos = function (e) {
     
     $("userList").appendChild(tabel);
 }
+
+
+const showData = function (e) {
+    console.log(e.target.getResponseHeader("Content-Type"));
+    let role = JSON.parse(e.target.responseText);
+    console.log(role);
+ }
 
 function work(){
     newTodos();

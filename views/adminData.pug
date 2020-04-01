@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    form(id='adminUser' action='/users/admin' method='POST')
+        table
+            tr
+                td.col_l Role
+                    td
+                        select(name='roles' value=`${user[0].role}`)
+                            each roles in role
+                                if user[0].role === roles.name
+                                    option(selected="selected") #{roles.name}
+                                else
+                                    option #{roles.name}
+                tr
+                    td.col_l First name
+                    td
+                        input(type='text' name='localname' value=`${user[0].firstName}`)
+                tr
+                    td.col_l Last name
+                    td
+                        input(type='text' name='code' value=`${user[0].lastName}`)
+                tr
+                    td.col_l Email
+                    td
+                        input(type='text' name='region' value=`${user[0].email}` required)
+                tr
+                    td
+                        input(type='submit' value='Update data' id='Go')

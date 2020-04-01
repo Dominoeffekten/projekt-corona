@@ -58,11 +58,10 @@ exports.delUsers = async function (name) {
 exports.changeUser = async function (req) {
     let check = { email: req.body.email };
     let user = new User({
-        role: "user",
+        role: req.body.role,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
-        password: await bcrypt.hash(req.body.password, saltTurns)
     });
     try {
         let cs = await mon.upsert(dbServer, dbName, User, user, check);

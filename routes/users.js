@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const userHandler = require("../models/handleUsers");
 const ToDoHandler = require("../models/handleToDo");
+const roleHandler = require("../models/handleRole");
 const { body,validationResult,sanitizeBody,check } = require('express-validator');
 const fs = require('fs');
 
@@ -87,14 +88,28 @@ router.get('/admin',  async function(req, res) { //start login
     who: "Hello " + req.session.user
   });
 });
-router.get('/admin/:user',  async function(req, res) { //start login
+router.get('/admin/user',  async function(req, res) { //start login
   let user = await userHandler.getUsers({role: "new"}, {sort: {role: 1}});
   res.json(user);
 });
-router.post('/admin/:user',  async function(req, res) { //start login
-  let user = await userHandler.changeUser({}, {sort: {role: 1}});
-  res.json(user);
+router.post('/adminData', async function(req, res, next) { //update the user
+  let users = await userHandler.getUsers({email: req.body.email}, {sort: {}});
+  let roles = await roleHandler.getRole({}, {sort: {name: 1}});
+  console.log(roles);
+  res.render('adminData', {
+      title: "You are about to edit " + req.body.email,
+      user: users,
+      role: roles,
+  });
 });
+router.post('/admin', async function(req, res) { //start login
+  let postUser = await userHandler.changeUser(req);
+  console.log(postUser);
+  return res.redirect('/admin'); // skip the receipt, return to fp
+
+});
+
+
 
 /* user */
 router.get('/user',  async function(req, res) { //start user
@@ -123,10 +138,11 @@ router.post('/user/',[ //indsætter en todo liste - pending
   console.log(todo);
 });
 router.get('/user/:email',  async function(req, res) { //show todo - virker ikke
-  let email = req.session.email;
+  console.log(req.session.email);
   console.log(req.body)
   let todo = ToDoHandler.getToDo({userID: req.session.email}, {sort: {deadline: 1, title: 1}});
-  res.json(todo);//console.log(todo);
+  res.json(todo);
+  //console.log(todo);
 });
 
 /*
