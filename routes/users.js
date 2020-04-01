@@ -106,10 +106,7 @@ router.post('/admin', async function(req, res) { //start login
   let postUser = await userHandler.changeUser(req);
   console.log(postUser);
   return res.redirect('/admin'); // skip the receipt, return to fp
-
 });
-
-
 
 /* user */
 router.get('/user',  async function(req, res) { //start user
