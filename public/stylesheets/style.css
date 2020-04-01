@@ -27,7 +27,7 @@ main {
     padding: 1em;
 }
 
-input, select {
+input, select, textarea {
     width: auto;
     margin:5px 0;
     border-radius: 3px;
@@ -37,6 +37,14 @@ input, select {
     color: white;
     border-radius: 10px;
     padding: 10px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: white;
+}
+
+textarea {
+    width: 50%;
 }
 
 .delButton {
@@ -89,8 +97,14 @@ input #adminUser {
 
 p, #toDo {
     margin-left: 25.1%; 
+    width: 69%;
 }
 
 #toDo table {
-    width: 200px;
+    width: 250px;
+}
+
+.smallHeading {
+    font-weight: 900;
+    margin-left: 10%;
 }

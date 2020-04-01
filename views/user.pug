@@ -3,20 +3,16 @@ extends layout
 block content
     h2.headline= "Add a new to do"
     form(action="/users/user/" + read method="POST" id="userForm")
-        label User
-        input(type="text", name="name" id="name" value=read readonly)
-        br 
-        label Title
-        input(type="text", name="title")
-        br 
-        label Text
-        input(type="textarea" rows="100" columns="100", name="text")
+        input(type="text", name="name" id="name" placeholder="User" value=read readonly)
+        
+        input(type="text", name="title" placeholder="Title")
         br
-        label Deadline
-        input(type="date", name="deadline" id="deadline")
-        br
-        label Start
+        label Deadline &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &ensp; Start
+                br
+        input(type="date", name="deadline" id="deadline" )
         input(type="date", name="start" id="start")
+        br
+        textarea(type="textarea" rows="10", name="text" placeholder="Message")
         br
         input(type='submit' value='GO' class='go')
     p.wrong= wrong
