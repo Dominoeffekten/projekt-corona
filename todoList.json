@@ -1,0 +1,118 @@
+{
+  _id: 5e8460b45ed2eceafc9fce53,
+  title: 'Hjemmeside',
+  __v: 0,
+  created: 2020-04-01T09:36:52.507Z,
+  deadline: null,
+  start: null,
+  text: 'Lav denne side',
+  userID: 'tinna@mail.com'
+},{
+  _id: 5e832e455ed2eceafc9fc5fc,
+  title: 'ID',
+  __v: 0,
+  deadline: null,
+  start: null,
+  text: 'ID',
+  userID: 'tinna@mail.com',
+  created: 2020-04-01T13:58:14.888Z
+},{
+  _id: 5e84679b5ed2eceafc9fce72,
+  title: 'Old news23',
+  __v: 0,
+  created: 2020-04-01T10:06:19.976Z,
+  deadline: null,
+  start: null,
+  text: '3Old news2',
+  userID: 'tinna@mail.com'
+},{
+  _id: 5e846d0d5ed2eceafc9fcfd5,
+  title: 'Test34',
+  __v: 0,
+  created: 2020-04-01T10:29:33.272Z,
+  deadline: null,
+  start: null,
+  text: 'Testw3r3',
+  userID: 'tinna@mail.com'
+},{
+  _id: 5e83186f5ed2eceafc9fc4e7,
+  title: 'new',
+  __v: 0,
+  deadline: null,
+  start: null,
+  text: 'new',
+  userID: 'tinna@mail.com',
+  created: 2020-04-01T13:58:14.889Z
+},{
+  _id: 5e832fae5ed2eceafc9fc669,
+  title: 'new2',
+  __v: 0,
+  deadline: null,
+  start: null,
+  text: 'nre2',
+  userID: 'tinna@mail.com',
+  created: 2020-04-01T13:58:14.889Z
+},{
+  _id: 5e8486d65ed2eceafc9fd439,
+  title: 'prut',
+  __v: 0,
+  created: 2020-04-01T12:20:29.184Z,
+  deadline: 2020-04-01T00:00:00.000Z,
+  start: 2020-04-01T00:00:00.000Z,
+  text: '',
+  userID: 'tinna@mail.com'
+},{
+  _id: 5e8487185ed2eceafc9fd45a,
+  title: 'prut2',
+  __v: 0,
+  created: 2020-04-01T12:20:40.908Z,
+  deadline: 2020-04-01T00:00:00.000Z,
+  start: 2020-04-01T00:00:00.000Z,
+  text: '',
+  userID: 'tinna@mail.com'
+},{
+  _id: 5e8485c65ed2eceafc9fd3eb,
+  title: 'test',
+  __v: 0,
+  created: 2020-04-01T12:15:02.906Z,
+  deadline: null,
+  start: null,
+  text: '',
+  userID: 'tinna@mail.com'
+},{
+  _id: 5e8485f75ed2eceafc9fd404,
+  title: 'tinna',
+  __v: 0,
+  created: 2020-04-01T12:19:02.026Z,
+  deadline: 2020-04-01T00:00:00.000Z,
+  start: 2020-04-01T00:00:00.000Z,
+  text: '',
+  userID: 'tinna@mail.com'
+},{
+  _id: 5e84873e5ed2eceafc9fd463,
+  title: 'title',
+  __v: 0,
+  created: 2020-04-01T12:21:56.711Z,
+  deadline: null,
+  start: null,
+  text: '',
+  userID: 'tinna@mail.com'
+},{
+  _id: 5e84876b5ed2eceafc9fd484,
+  title: 'title 2',
+  __v: 0,
+  created: 2020-04-01T12:22:03.264Z,
+  deadline: null,
+  start: null,
+  text: '',
+  userID: 'tinna@mail.com'
+},{
+  _id: 5e8460715ed2eceafc9fce47,
+  title: 'tr',
+  __v: 0,
+  created: 2020-04-01T09:35:45.785Z,
+  deadline: null,
+  start: null,
+  text: 'rt',
+  userID: 'tinna@mail.com'
+}

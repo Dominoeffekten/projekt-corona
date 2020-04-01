@@ -69,7 +69,9 @@ router.post('/login', [
         subtitle: "You must be authorized by a admin",
         loggedin: false,
       });
-    } 
+    } if (req.session.role === 'undefined') { //admin is there
+      return res.redirect('/users/login');
+    }
   } else { //user not there
       res.render('login', {
         subtitle: 'User Login',
@@ -145,7 +147,6 @@ router.post('/user/:email',  async function(req, res) { //makes a todo
   console.log(todo);
   return res.redirect('/users/user');
 });
-
 router.post('/user/delete',  async function(req, res) { //fjerner en todo  - virker ikke
   console.log(req);
   let todo = ToDoHandler.delToDo({created: req.body.id}, {sort: {}});
@@ -154,15 +155,20 @@ router.post('/user/delete',  async function(req, res) { //fjerner en todo  - vir
  
 });
 
-/*
-router.post('/users/download',  async function(req, res) { //show todo
-  let todo = await ToDoHandler.getToDo({}, {sort: {title: 1}});
-  var json = res.json(todo)
-  fs.writeFile('TodoList.json', json, (err) => {
-    if (err) throw err;
-    console.log('To do saved!');
-  });
-});*/
+/* Download a template */
+router.post('/download/:type',  async function(req, res) { //download mongo
+  console.log(req.body.email);
+  let url = req.url.substring(10);
+    if(url = "json"){
+    let todo = await ToDoHandler.getToDo({userID: req.body.email}, {sort: {title: 1}});
+    var json = res.json(todo)
+    fs.writeFile('todoList.json', todo, (err) => {
+      if (err) throw err;
+      console.log('To do saved!');
+    });
+  }
+  //return res.redirect('/users/user');*/
+});
 
 
 
