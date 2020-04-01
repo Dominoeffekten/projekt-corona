@@ -23,7 +23,7 @@ const makeToDos = function (e) {
     var day = d.getDate()
     let date = year +"-"+month+"-"+day
 
-    $("name").setAttribute("value", "tinna@mail.com");
+    
     //start dato for to do
     $("start").setAttribute("value", date);
     $("start").setAttribute("min", date);
@@ -45,7 +45,7 @@ const showToDos = function (e) {
     to.forEach(function (todo) {
         let arr = ["#FFFA94", "#FFAAFB", "#AAFFAD", "#AABFFF"]; //Gul, pink, grøn, blå
         var randomValue = arr[Math.floor(arr.length * Math.random())];
-        
+
         let tabel = document.createElement("table");
         tabel.setAttribute("style", "background-color:"+randomValue);
         let tr = document.createElement("tr");
@@ -53,12 +53,12 @@ const showToDos = function (e) {
 
         let form = document.createElement('form');
         form.setAttribute("method", "POST");
-        form.setAttribute("action", "/users/user");
+        form.setAttribute("action", "/users/user/"+todo.created);
         //form.addEventListener('click', getTodos);
 
         let input = document.createElement('input');
-        input.setAttribute("value", todo.title);
-        input.setAttribute("name", "title");
+        input.setAttribute("value", todo.created);
+        input.setAttribute("name", "id");
         input.setAttribute("type", "hidden");
         form.appendChild(input);
 

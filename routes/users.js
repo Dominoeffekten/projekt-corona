@@ -89,7 +89,7 @@ router.get('/admin',  async function(req, res) { //start login
   });
 });
 router.get('/admin/user',  async function(req, res) { //start login
-  let user = await userHandler.getUsers({role: "new"}, {sort: {role: 1}});
+  let user = await userHandler.getUsers({}, {sort: {role: 1}});
   res.json(user);
 });
 router.post('/adminData', async function(req, res, next) { //update the user
@@ -120,7 +120,7 @@ router.get('/user',  async function(req, res) { //start user
     read: req.session.email,
   });
 });
-router.post('/user/',[ //indsætter en todo liste - pending
+router.post('/user/',[ //indsætter en todo liste
   check('title').isLength({ min: 1 }),
   ],  async function(req, res) { 
   const errors = validationResult(req) //Write something - title er forkort
@@ -134,31 +134,22 @@ router.post('/user/',[ //indsætter en todo liste - pending
   let todo = ToDoHandler.upsertToDo(req);
   console.log(todo);
 });
-router.get('/user/todo',  async function(req, res) { //show todo - virker ikke
+router.get('/user/todo',  async function(req, res) { //show todo
   let email = req.session.email;
-  let todo = await ToDoHandler.getToDo({userID: email}, {sort: {}});
+  let todo = await ToDoHandler.getToDo({userID: email}, {sort: {created: -1}});
   res.json(todo);
 });
-router.post('/user/:email',  async function(req, res) { //show todo - virker ikke
+router.post('/user/:email',  async function(req, res) { //makes a todo
   let todo = await ToDoHandler.upsertToDo(req);
   console.log(todo);
-  /*let email = req.session.email;
-  console.log(req.body)
-  let todo = ToDoHandler.getToDo({userID: email}, {sort: {created: 1}});
-  //console.log(todo);*/
   return res.redirect('/users/user');
 });
 
-/*
-router.post('/user',  async function(req, res) { //fjerner en todo
+router.post('/user/:todo',  async function(req, res) { //fjerner en todo  - virker ikke
   console.log(req.body);
-  let todo = await ToDoHandler.delToDo({title: req.body.title}, {sort: {title: 1}});
-  res.render('user', { 
-    subtitle: "The user site",
-    scriptLink:'/javascripts/user.js',
-    loggedin: true,
-    who: "Hello " + req.session.user,
-  });
+  let todo = ToDoHandler.delToDo({created: req.body.id}, {sort: {}});
+  console.log(todo);
+  return res.redirect('/users/user');
 });
 
 /*
@@ -168,12 +159,6 @@ router.post('/users/download',  async function(req, res) { //show todo
   fs.writeFile('TodoList.json', json, (err) => {
     if (err) throw err;
     console.log('To do saved!');
-  });
-  res.render('user', { 
-    subtitle: "The user site",
-    scriptLink:'/javascripts/user.js',
-    loggedin: true,
-    who: "Hello " + req.session.user,
   });
 });*/
 
