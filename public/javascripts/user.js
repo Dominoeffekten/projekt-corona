@@ -49,6 +49,7 @@ const showToDos = function (e) {
         let form = document.createElement('form');
         form.setAttribute("method", "POST");
         form.setAttribute("action", "/users/user");
+        form.addEventListener('click', getTodos);
 
         let input = document.createElement('input');
         input.setAttribute("value", todo.title);
@@ -117,7 +118,6 @@ const showToDos = function (e) {
 
 function work(){
     newTodos();
-    getTodos();
 }
 
 

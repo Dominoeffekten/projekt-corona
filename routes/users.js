@@ -98,24 +98,16 @@ router.post('/admin/:user',  async function(req, res) { //start login
 
 /* user */
 router.get('/user',  async function(req, res) { //start user
-  console.log(req.session.email);
-  console.log(req.session.user);
-  let todo = await ToDoHandler.getToDo({userID: req.session.email}, {sort: {deadline: 1, title: 1}});
-  //console.log(todo);
+  //console.log(req.session.email);
+  //console.log(req.session.user);
   res.render('user', { 
     subtitle: "The user site",
     scriptLink:'/javascripts/user.js',
     loggedin: true,
     who: "Hello " + req.session.user,
-    readEmail: req.session.email,
+    read: req.session.email,
   });
 });
-router.get('/user/:email',  async function(req, res) { //show todo - virker ikke
-  let email = req.session.email;
-  let todo = await ToDoHandler.getToDo({userID: req.session.email}, {sort: {deadline: 1, title: 1}});
-  res.json(todo);//console.log(todo);
-});
-
 router.post('/user/',[ //indsætter en todo liste - pending
   check('title').isLength({ min: 1 }),
   ],  async function(req, res) { 
@@ -123,11 +115,18 @@ router.post('/user/',[ //indsætter en todo liste - pending
   if (!errors.isEmpty()) {
     return res.render('user', {
       subtitle: "The user site",
+      loggedin: true,
       wrong: 'Title is to short'
     });
   }
   let todo = ToDoHandler.upsertToDo(req);
   console.log(todo);
+});
+router.get('/user/:email',  async function(req, res) { //show todo - virker ikke
+  let email = req.session.email;
+  console.log(req.body)
+  let todo = ToDoHandler.getToDo({userID: req.session.email}, {sort: {deadline: 1, title: 1}});
+  res.json(todo);//console.log(todo);
 });
 
 /*
