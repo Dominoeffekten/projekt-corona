@@ -21,6 +21,10 @@ const toDoSchema = mongoose.Schema({
     start: {
         type: String,
         default: Date.now
+    },
+    created: {
+        type: Date,
+        default: Date.now
     }
 });
 

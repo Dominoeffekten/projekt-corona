@@ -134,12 +134,19 @@ router.post('/user/',[ //indsætter en todo liste - pending
   let todo = ToDoHandler.upsertToDo(req);
   console.log(todo);
 });
-router.get('/user/:email',  async function(req, res) { //show todo - virker ikke
-  console.log(req.session.email);
-  console.log(req.body)
-  let todo = ToDoHandler.getToDo({userID: req.session.email}, {sort: {deadline: 1, title: 1}});
+router.get('/user/todo',  async function(req, res) { //show todo - virker ikke
+  let email = req.session.email;
+  let todo = await ToDoHandler.getToDo({userID: email}, {sort: {}});
   res.json(todo);
-  //console.log(todo);
+});
+router.post('/user/:email',  async function(req, res) { //show todo - virker ikke
+  let todo = await ToDoHandler.upsertToDo(req);
+  console.log(todo);
+  /*let email = req.session.email;
+  console.log(req.body)
+  let todo = ToDoHandler.getToDo({userID: email}, {sort: {created: 1}});
+  //console.log(todo);*/
+  return res.redirect('/users/user');
 });
 
 /*

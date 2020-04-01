@@ -12,7 +12,7 @@ const newTodos = function (ev) { //continents
 const getTodos = function (ev) { //continents
     let req = Object.create(Ajax);
     req.init();
-    req.getFile("/users/user/:email", showToDos);
+    req.getFile("/users/user/todo", showToDos);
 };
  
 //Make to do
@@ -40,11 +40,12 @@ const showToDos = function (e) {
         element.removeChild(element.firstChild);
     }
     let to = JSON.parse(e.target.responseText);
-
-    let arr = ["#FFFA94", "#FFAAFB", "#AAFFAD", "#AABFFF"];
-    var randomValue = arr[Math.floor(arr.length * Math.random())];
+    console.log(to)
 
     to.forEach(function (todo) {
+        let arr = ["#FFFA94", "#FFAAFB", "#AAFFAD", "#AABFFF"]; //Gul, pink, grøn, blå
+        var randomValue = arr[Math.floor(arr.length * Math.random())];
+        
         let tabel = document.createElement("table");
         tabel.setAttribute("style", "background-color:"+randomValue);
         let tr = document.createElement("tr");
