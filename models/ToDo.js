@@ -15,12 +15,14 @@ const toDoSchema = mongoose.Schema({
         required: false
     },
     deadline: {
-        type: String,
+        type: Date,
+        default: Date.now,
         required: true
     },
     start: {
-        type: String,
-        default: Date.now
+        type: Date,
+        default: Date.now,
+        required: false
     },
     created: {
         type: Date,
