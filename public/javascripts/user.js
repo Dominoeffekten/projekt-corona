@@ -74,24 +74,32 @@ const showToDos = function (e) {
 
         let tr1 = document.createElement('tr');
         let p = document.createElement("p");
-        let tit = document.createTextNode("Title: " + todo.title);
+        let tit = document.createTextNode("Title:");
+        let TODOtit = document.createTextNode(todo.title);
         p.appendChild(tit);
+        p.appendChild(TODOtit);
         tr1.appendChild(p);
 
-        let p1 = document.createElement("p");
-        let text = document.createTextNode("Message: " + todo.text);
-        p1.appendChild(text);
-        tr1.appendChild(p1);
-
         let p2 = document.createElement("p");
-        let start = document.createTextNode("Start: " + todo.start);
+        let start = document.createTextNode("Start:");
+        let TODOstart = document.createTextNode(todo.start);
         p2.appendChild(start);
+        p2.appendChild(TODOstart);
         tr1.appendChild(p2);
 
         let p3 = document.createElement("p");
-        let dead = document.createTextNode("Deadline: " + todo.deadline);
+        let dead = document.createTextNode("Deadline:");
+        let TODOdead = document.createTextNode(todo.deadline);
         p3.appendChild(dead);
+        p3.appendChild(TODOdead);
         tr1.appendChild(p3);
+
+        let p1 = document.createElement("p");
+        let text = document.createTextNode("Message:");
+        let TODOtext = document.createTextNode(todo.text);
+        p1.appendChild(text);
+        p1.appendChild(TODOtext);
+        tr1.appendChild(p1);
 
         tabel.appendChild(tr);
         tabel.appendChild(tr1);
