@@ -74,32 +74,44 @@ const showToDos = function (e) {
 
         let tr1 = document.createElement('tr');
         let p = document.createElement("p");
+        p.setAttribute("class", "smallHeading");
         let tit = document.createTextNode("Title:");
+        let TOp = document.createElement("p");
         let TODOtit = document.createTextNode(todo.title);
         p.appendChild(tit);
-        p.appendChild(TODOtit);
+        TOp.appendChild(TODOtit);
         tr1.appendChild(p);
+        tr1.appendChild(TOp);
 
         let p2 = document.createElement("p");
+        p2.setAttribute("class", "smallHeading");
         let start = document.createTextNode("Start:");
+        let TOp2 = document.createElement("p");
         let TODOstart = document.createTextNode(todo.start);
         p2.appendChild(start);
-        p2.appendChild(TODOstart);
+        TOp2.appendChild(TODOstart);
         tr1.appendChild(p2);
+        tr1.appendChild(TOp2);
 
         let p3 = document.createElement("p");
+        p3.setAttribute("class", "smallHeading");
         let dead = document.createTextNode("Deadline:");
+        let TOp3 = document.createElement("p");
         let TODOdead = document.createTextNode(todo.deadline);
         p3.appendChild(dead);
-        p3.appendChild(TODOdead);
+        TOp3.appendChild(TODOdead);
         tr1.appendChild(p3);
+        tr1.appendChild(TOp3);
 
         let p1 = document.createElement("p");
+        p1.setAttribute("class", "smallHeading");
         let text = document.createTextNode("Message:");
+        let TOp4 = document.createElement("p");
         let TODOtext = document.createTextNode(todo.text);
         p1.appendChild(text);
-        p1.appendChild(TODOtext);
+        TOp4.appendChild(TODOtext);
         tr1.appendChild(p1);
+        tr1.appendChild(TOp4);
 
         tabel.appendChild(tr);
         tabel.appendChild(tr1);
