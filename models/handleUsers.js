@@ -58,7 +58,7 @@ exports.delUsers = async function (name) {
 exports.changeUser = async function (req) {
     let check = { email: req.body.email };
     let user = new User({
-        role: req.body.role,
+        role: req.body.roles,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,

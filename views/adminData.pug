@@ -9,9 +9,9 @@ block content
                         select(name='roles' value=`${user[0].role}`)
                             each roles in role
                                 if user[0].role === roles.name
-                                    option(selected="selected") #{roles.name}
+                                    option(selected="selected" value=`${user[0].role}`) #{roles.name}
                                 else
-                                    option #{roles.name}
+                                    option(value=`${roles.name}`) #{roles.name}
                 tr
                     td.col_l First name
                     td

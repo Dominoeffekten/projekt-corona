@@ -89,12 +89,13 @@ router.get('/admin',  async function(req, res) { //start login
   });
 });
 router.get('/admin/user',  async function(req, res) { //start login
-  let user = await userHandler.getUsers({}, {sort: {role: 1}});
+  let user = await userHandler.getUsers({}, {sort: {role: 1, created: 1 }});
   res.json(user);
 });
 router.post('/adminData', async function(req, res, next) { //update the user
   let users = await userHandler.getUsers({email: req.body.email}, {sort: {}});
   let roles = await roleHandler.getRole({}, {sort: {name: 1}});
+  console.log(users);
   console.log(roles);
   res.render('adminData', {
       title: "You are about to edit " + req.body.email,
@@ -104,8 +105,7 @@ router.post('/adminData', async function(req, res, next) { //update the user
 });
 router.post('/admin', async function(req, res) { //start login
   console.log(req.body);
-  let postUser = await userHandler.changeUser(req.body);
-  console.log(postUser);
+  let postUser = await userHandler.changeUser(req);
   return res.redirect('admin'); // skip the receipt, return to fp
 });
 
