@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    h2= "Add a new to do"
+    h2.headline= "Add a new to do"
     form(action="/users/user/" + read method="POST" id="userForm")
         label User
         input(type="text", name="name" id="name" value=read readonly)
@@ -17,9 +17,9 @@ block content
         br
         label Start
         input(type="date", name="start" id="start")
-        br 
-        button(type="submit") GO
+        br
+        input(type='submit' value='GO' class='go')
     p.wrong= wrong
-    h2= "See the to dos"
+    h2.headline= "See the to dos"
     p= "On this page you can save your to dos. If you have made an error you can make a new post, by deleting it or write the title of it in the form 😘"
     div#toDo

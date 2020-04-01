@@ -29,7 +29,6 @@ main {
 
 input, select {
     width: auto;
-    padding:5px;
     margin:5px 0;
     border-radius: 3px;
     font-size:14px;
@@ -39,12 +38,7 @@ input, select {
     border-radius: 10px;
     padding: 10px;
 }
-#submitButton {
-    width:50%;
-    margin:15px auto;
-    display:block;
-    padding:5px;
-}
+
 .delButton {
     font-size:20px;
     background-color:transparent;
@@ -80,17 +74,23 @@ input #adminUser {
 
 }
 
-#Go {
+.go {
     background-color: #f76bac;
     color: white;
     border: none;
     text-transform: uppercase;
     font-weight: 600;
-    margin-left: 103%;
-    margin-top: 15%;
 }
 
-h1, h2 {
+.headline {
     color: #f76bac;
     margin-left: 25.1%;
+}
+
+p, #toDo {
+    margin-left: 25.1%; 
+}
+
+#toDo table {
+    width: 200px;
 }
