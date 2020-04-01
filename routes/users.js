@@ -147,12 +147,11 @@ router.post('/user/:email',  async function(req, res) { //makes a todo
   console.log(todo);
   return res.redirect('/users/user');
 });
-router.post('/user/delete',  async function(req, res) { //fjerner en todo  - virker ikke
+router.post('/user/delete', async function(req, res) { //fjerner en todo  - virker ikke
   console.log(req);
   let todo = ToDoHandler.delToDo({created: req.body.id}, {sort: {}});
   console.log(todo);
   return res.redirect('/users/user');
- 
 });
 
 /* Download a template */

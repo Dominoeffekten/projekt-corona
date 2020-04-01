@@ -1,6 +1,6 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  h2.headline= message + " "+ error.status
+  //pre #{error.stack}
+  img(src='/images/gone.jpeg' , alt='Post It notes' style="height: 800px;") 
