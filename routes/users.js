@@ -146,11 +146,12 @@ router.post('/user/:email',  async function(req, res) { //makes a todo
   return res.redirect('/users/user');
 });
 
-router.post('/user/:todo',  async function(req, res) { //fjerner en todo  - virker ikke
-  console.log(req.body);
+router.post('/user/delete',  async function(req, res) { //fjerner en todo  - virker ikke
+  console.log(req);
   let todo = ToDoHandler.delToDo({created: req.body.id}, {sort: {}});
   console.log(todo);
   return res.redirect('/users/user');
+ 
 });
 
 /*
