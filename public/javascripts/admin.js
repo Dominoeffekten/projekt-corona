@@ -38,6 +38,7 @@ const showToDos = function (e) {
     let users = JSON.parse(e.target.responseText);
 
     let tabel = document.createElement("table");
+    tabel.setAttribute("id", "adminTabel");
     let tr  = document.createElement('tr');
     let th = document.createElement("th");
     let p = document.createTextNode("Title");
