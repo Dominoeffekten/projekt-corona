@@ -24,13 +24,9 @@ const makeToDos = function (e) {
     let date = year +"-"+month+"-"+day
 
     
-    //start dato for to do
-    $("start").setAttribute("value", date);
-    $("start").setAttribute("min", date);
-    //deadline
-    $("deadline").setAttribute("value", date);
-    $("deadline").setAttribute("min", date);
-
+    var dateControl = document.querySelector('input[type="date"]');
+    dateControl.setAttribute("value", date);
+    dateControl.setAttribute("min", date);
 }
 //Show to do
 const showToDos = function (e) {
