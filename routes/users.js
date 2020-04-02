@@ -4,7 +4,7 @@ const userHandler = require("../models/handleUsers");
 const ToDoHandler = require("../models/handleToDo");
 const roleHandler = require("../models/handleRole");
 const xmlHandler = require("../models/xml");
-const { body,validationResult,sanitizeBody,check } = require('express-validator');
+const { body,validationResult,sanitizeBody,check,custom } = require('express-validator');
 const fs = require('fs');
 
 /* GET users listing. */
@@ -50,7 +50,7 @@ router.post('/login', [
   
   //Write something - navnet eller adgangskoden er for kort
   const errors = validationResult(req)
-  if (!errors.isEmpty()) {
+  if (!errors.isLength()) {
     return res.render('login', {
       subtitle:  'User Login',
       wrong: 'email or password is to short'
@@ -126,6 +126,7 @@ router.get('/user',  async function(req, res) { //start user
 });
 router.post('/user/',[ //indsætter en todo liste
   check('title').isLength({ min: 1 }),
+  custom(isValidDate).withMessage('the date must be valid'),
   ],  async function(req, res) { 
   const errors = validationResult(req) //Write something - title er forkort
   if (!errors.isEmpty()) {
@@ -134,6 +135,13 @@ router.post('/user/',[ //indsætter en todo liste
       loggedin: true,
       wrong: 'Title is to short'
     });
+  }
+  function isValidDate(value) { //Dato er forkert
+    if (!value.match(/^\d{4}-\d{2}-\d{2}$/)) return false;
+  
+    const date = new Date(value);
+    if (!date.getTime()) return false;
+    return date.toISOString().slice(0, 10) === value;
   }
   let todo = ToDoHandler.upsertToDo(req);
   console.log(todo);

@@ -49,6 +49,7 @@ const showToDos = function (e) {
         let lnk = document.createElement('a');                        // denne blok i stedet for
         lnk.setAttribute("href", "user/delete/"+todo.created);
         let delI = document.createTextNode("X");
+        lnk.setAttribute("class", "delete");
         lnk.appendChild(delI);
         td.appendChild(lnk);
         tr.appendChild(td);
