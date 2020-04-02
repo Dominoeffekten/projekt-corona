@@ -1,44 +1,29 @@
 <?xml version="1.0"?>
 <todos>
   <todo>
-    <title>Hjemmeside</title>
-    <created>1585733812507</created>
+    <title/>
+    <created>1585827092624</created>
     <userID>tinna@mail.com</userID>
   </todo>
   <todo>
-    <title>ID</title>
-    <created>1585815224947</created>
+    <title>TinnaTest</title>
+    <created>1585816052199</created>
     <userID>tinna@mail.com</userID>
   </todo>
   <todo>
-    <title>new</title>
-    <created>1585815224948</created>
+    <title>Tobias</title>
+    <created>1585816499250</created>
+    <deadline>1587081600000</deadline>
+    <start>1585785600000</start>
+    <text>1585785600000</text>
     <userID>tinna@mail.com</userID>
   </todo>
   <todo>
-    <title>new2</title>
-    <created>1585815224948</created>
-    <userID>tinna@mail.com</userID>
-  </todo>
-  <todo>
-    <title>prut</title>
-    <created>1585743629184</created>
-    <deadline>1585699200000</deadline>
-    <start>1585699200000</start>
-    <text>1585699200000</text>
-    <userID>tinna@mail.com</userID>
-  </todo>
-  <todo>
-    <title>prut2</title>
-    <created>1585743640908</created>
-    <deadline>1585699200000</deadline>
-    <start>1585699200000</start>
-    <text>1585699200000</text>
-    <userID>tinna@mail.com</userID>
-  </todo>
-  <todo>
-    <title>test</title>
-    <created>1585743302906</created>
+    <title>test454</title>
+    <created>1585816160108</created>
+    <deadline>1585785600000</deadline>
+    <start>1585872000000</start>
+    <text>1585872000000</text>
     <userID>tinna@mail.com</userID>
   </todo>
   <todo>
@@ -47,21 +32,6 @@
     <deadline>1585699200000</deadline>
     <start>1585699200000</start>
     <text>1585699200000</text>
-    <userID>tinna@mail.com</userID>
-  </todo>
-  <todo>
-    <title>title</title>
-    <created>1585743716711</created>
-    <userID>tinna@mail.com</userID>
-  </todo>
-  <todo>
-    <title>title 2</title>
-    <created>1585743723264</created>
-    <userID>tinna@mail.com</userID>
-  </todo>
-  <todo>
-    <title>tr</title>
-    <created>1585733745785</created>
     <userID>tinna@mail.com</userID>
   </todo>
 </todos>

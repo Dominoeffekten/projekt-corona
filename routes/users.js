@@ -169,16 +169,15 @@ router.post('/download/:type',  async function(req, res) { //download mongo
   //console.log(req.body.email);
   let url = req.url.substring(10);
   console.log(url);
-    if(url = "json"){ //JSON template
-      let todo = await ToDoHandler.getToDo({userID: req.body.email}, {sort: {title: 1}});
+  let todo = await ToDoHandler.getToDo({userID: req.body.email}, {sort: {title: 1}});
+  console.log(todo);
+    if(url =="json"){ //JSON template
       fs.writeFile('todoList.json', todo, (err) => {
         if (err) throw err;
         console.log('To do saved!');
         return res.redirect('/users/user');
       });
-    } else if(url = "xml"){ //XML template
-      let todo = await ToDoHandler.getToDo({userID: req.body.email}, {sort: {title: 1}});
-      //console.log(todo);
+    } else if(url == "xml"){ //XML template
       let xml = await xmlHandler.xmlMaker(todo);
       //console.log(xml);
       fs.writeFile('todoList.xml', xml, (err) => {
