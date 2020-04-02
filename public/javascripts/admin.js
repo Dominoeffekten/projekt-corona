@@ -71,6 +71,7 @@ const showToDos = function (e) {
         let form = document.createElement('form');
         form.setAttribute("method", "POST");
         form.setAttribute("action", "/users/adminData");
+        form.setAttribute("class", "userList");
 
         let input = document.createElement('input');
         input.setAttribute("value", user.email);

@@ -48,9 +48,6 @@ textarea {
 }
 
 .delButton {
-    font-size:20px;
-    background-color:transparent;
-    border:none;
     float: right;
 }
 table:not(#adminTable) {
@@ -64,7 +61,7 @@ table:not(#adminTable) {
     color: red;
 }
 
-#adminUser, #userForm {
+#adminUser, #userForm, .userList {
     width: 50%;
     background: rgb(47,56,100);
     background: radial-gradient(circle, rgba(47,56,100,1) 50%, rgba(24,31,74,1) 100%);
@@ -82,7 +79,7 @@ input #adminUser {
 
 }
 
-.go {
+.go, .delButton {
     background-color: #f76bac;
     color: white;
     border: none;
