@@ -3,6 +3,7 @@ var router = express.Router();
 const userHandler = require("../models/handleUsers");
 const ToDoHandler = require("../models/handleToDo");
 const roleHandler = require("../models/handleRole");
+const xml = require("../models/xml");
 const { body,validationResult,sanitizeBody,check } = require('express-validator');
 const fs = require('fs');
 
@@ -147,7 +148,7 @@ router.post('/user/:email',  async function(req, res) { //makes a todo
   console.log(todo);
   return res.redirect('/users/user');
 });
-router.post('/user/delete', async function(req, res) { //fjerner en todo  - virker ikke
+router.post('/user/delete/:id', async function(req, res) { //fjerner en todo  - virker ikke
   console.log(req);
   let todo = ToDoHandler.delToDo({created: req.body.id}, {sort: {}});
   console.log(todo);
@@ -158,21 +159,27 @@ router.post('/user/delete', async function(req, res) { //fjerner en todo  - virk
 router.post('/download/:type',  async function(req, res) { //download mongo
   console.log(req.body.email);
   let url = req.url.substring(10);
-    if(url = "json"){
+    /*if(url = "json"){ //JSON template
       let todo = await ToDoHandler.getToDo({userID: req.body.email}, {sort: {title: 1}});
-      var json = res.json(todo);
+      res.json(todo);
       fs.writeFile('todoList.json', todo, (err) => {
         if (err) throw err;
         console.log('To do saved!');
+        //return res.redirect('/users/user');
       });
-    }
-    if(url = "json"){
+    }else*/ if(url = "xml"){ //XML template
       let todo = await ToDoHandler.getToDo({userID: req.body.email}, {sort: {title: 1}});
-      
     }
-  //return res.redirect('/users/user');*/
+  
 });
-
+router.get('/user/delete/:id', async function(req, res) { //fjerner en todo  - virker ikke
+  console.log("del0 " + req.params.id);
+  let d = new Date(req.params.id);
+  console.log("del1 " + d);
+  let todo = await ToDoHandler.delToDo({created: d}, {sort: {}});
+  console.log("del2 " + todo);
+  res.redirect('/users/user');
+});
 
 
 module.exports = router;

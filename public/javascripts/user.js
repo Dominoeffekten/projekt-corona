@@ -51,26 +51,12 @@ const showToDos = function (e) {
         let tr = document.createElement("tr");
         let td = document.createElement("td");
 
-        let form = document.createElement('form');
-        form.setAttribute("method", "POST");
-        form.setAttribute("action", "/user/delete");
-        //form.addEventListener('click', getTodos);
-
-        let input = document.createElement('input');
-        input.setAttribute("value", todo.created);
-        input.setAttribute("name", "id");
-        input.setAttribute("type", "hidden");
-        form.appendChild(input);
-
-        let delButton = document.createElement('button');
-        delButton.setAttribute("class", "delButton");
+        let lnk = document.createElement('a');                        // denne blok i stedet for
+        lnk.setAttribute("href", "user/delete/"+todo.created);
         let delI = document.createTextNode("X");
-        delButton.appendChild(delI);
-        form.appendChild(delButton);
-
-        td.appendChild(form);
+        lnk.appendChild(delI);
+        td.appendChild(lnk);
         tr.appendChild(td);
-        
 
         let tr1 = document.createElement('tr');
         let p = document.createElement("p");
