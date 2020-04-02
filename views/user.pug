@@ -17,11 +17,11 @@ block content
         input(type='submit' value='GO' class='go')
     p.wrong= wrong
 
-    form(action="/users/download/json" method="POST")
+    form(action="/users/download/json" id="djson" method="POST")
         input(type="hidden", name="email" value=read)
         input(type='submit' value='Download JSON' class='go')
 
-    form(action="/users/download/xml" method="POST")
+    form(action="/users/download/xml" id="dxml" method="POST")
         input(type="hidden", name="email" value=read)
         input(type='submit' value='Download XML' class='go')
 

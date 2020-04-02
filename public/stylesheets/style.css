@@ -108,3 +108,7 @@ p, #toDo {
     font-weight: 900;
     margin-left: 10%;
 }
+
+#dxml {
+    float: left;
+}
