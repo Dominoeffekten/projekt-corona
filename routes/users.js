@@ -7,6 +7,7 @@ const xmlHandler = require("../models/xml");
 const { body,validationResult,sanitizeBody,check } = require('express-validator');
 const fs = require('fs');
 
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
@@ -102,6 +103,7 @@ router.post('/adminData', async function(req, res, next) { //update the user
   console.log(roles);
   res.render('adminData', {
       title: "You are about to edit " + req.body.email,
+      loggedin: true,
       user: users,
       role: roles,
   });

@@ -69,3 +69,13 @@ exports.changeUser = async function (req) {
         console.error(e);
     }
 };
+
+// If user is not present stop
+exports.checkUser = function (req) {
+    var user = req.session.user;
+    if (user == null) {
+      alert('Error');
+    } else {
+      return user;
+    }
+};
