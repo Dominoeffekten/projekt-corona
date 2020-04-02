@@ -61,6 +61,7 @@ const showToDos = function (e) {
         let tit = document.createTextNode(user.role);
         td1.appendChild(tit);
         tr1.appendChild(td1);
+
         let td2 = document.createElement('td');
         let name = document.createTextNode(user.firstName);
         td2.appendChild(name);
@@ -77,15 +78,26 @@ const showToDos = function (e) {
         input.setAttribute("type", "hidden");
         form.appendChild(input);
         
-        let delButton = document.createElement('button');
-        delButton.setAttribute("class", "delButton");
-        let delI = document.createTextNode("Update");
+        let upButton = document.createElement('button');
+        upButton.setAttribute("class", "delButton");
+        let upDate = document.createTextNode("Update");
         form.addEventListener('click', readData);
-        delButton.appendChild(delI);
-        form.appendChild(delButton);
-
+        upButton.appendChild(upDate);
+        form.appendChild(upButton);
         td3.appendChild(form);
         tr1.appendChild(td3);
+
+        let td4 = document.createElement('td');
+        let lnk = document.createElement('a');                        // denne blok i stedet for
+        lnk.setAttribute("href", "admin/delete/"+user.email);
+        let delI = document.createTextNode("X");
+        lnk.setAttribute("class", "delete");
+        lnk.appendChild(delI);
+        td4.appendChild(lnk);
+        tr1.appendChild(td4);
+
+        
+        
         tabel.appendChild(tr1);
 
     });

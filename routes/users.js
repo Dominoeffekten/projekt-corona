@@ -111,6 +111,12 @@ router.post('/admin', async function(req, res) { //start login
   let postUser = await userHandler.changeUser(req);
   return res.redirect('admin'); // skip the receipt, return to fp
 });
+router.get('/admin/delete/:email',  async function(req, res) { //slet user i admin
+  console.log(req.params.email);
+  let todo = await userHandler.delUsers({email: req.params.email}, {sort: {}});
+  //console.log(todo);
+  res.redirect('/users/admin');
+});
 
 /* user */
 router.get('/user',  async function(req, res) { //start user
