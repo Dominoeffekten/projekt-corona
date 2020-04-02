@@ -2,26 +2,26 @@ extends layout
 
 block content
 
-    form(action="/users/register" method="POST")
+    form(action="/users/register" method="POST" id="registerUser")
         label Role
-        input(type="text", name="role" value="new" readonly)
+        input(type="text", name="role" value="new" class="rolein" readonly)
         br 
         label First name
-        input(type="text", name="firstName")
+        input(type="text", name="firstName" class="firstin")
         br
         label Last name
-        input(type="text", name="lastName")
+        input(type="text", name="lastName" class="lastin")
         br
         label Email
-        input(type="text", name="email")
+        input(type="text", name="email" class="emailin")
         br
         label Password
-        input(type="password", name="password")
+        input(type="password", name="password" class="passwordin")
         br
-        label Password repeart
+        label Password repeat
         input(type="password", name="password2")
         br 
-        button(type="submit") GO
+        button(type="submit" class="go" id="goreg") GO
     
     p.wrong= wrong
 

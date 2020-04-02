@@ -71,7 +71,6 @@ const showToDos = function (e) {
         let form = document.createElement('form');
         form.setAttribute("method", "POST");
         form.setAttribute("action", "/users/adminData");
-        form.setAttribute("class", "userList");
 
         let input = document.createElement('input');
         input.setAttribute("value", user.email);
@@ -92,7 +91,7 @@ const showToDos = function (e) {
         let lnk = document.createElement('a');                        // denne blok i stedet for
         lnk.setAttribute("href", "admin/delete/"+user.email);
         let delI = document.createTextNode("X");
-        lnk.setAttribute("class", "delete");
+        lnk.setAttribute("class", "deleteAdmin");
         lnk.appendChild(delI);
         td4.appendChild(lnk);
         tr1.appendChild(td4);

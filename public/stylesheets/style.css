@@ -61,7 +61,7 @@ table:not(#adminTable) {
     color: red;
 }
 
-#adminUser, #userForm, .userList {
+#userForm, #adminTable, #registerUser, #loginForm {
     width: 50%;
     background: rgb(47,56,100);
     background: radial-gradient(circle, rgba(47,56,100,1) 50%, rgba(24,31,74,1) 100%);
@@ -72,6 +72,10 @@ table:not(#adminTable) {
     margin-top: 3%;
     box-shadow: 5px 5px 15px #cfcfcf;
     border-radius: 10px;
+}
+
+#adminTable {
+    text-align: center;
 }
 
 input #adminUser {
@@ -85,6 +89,14 @@ input #adminUser {
     border: none;
     text-transform: uppercase;
     font-weight: 600;
+    border-radius: 3px;
+    font-size:14px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.delButton {
+    margin-bottom: 5%;
 }
 
 .headline {
@@ -126,6 +138,48 @@ p {
     color: rgba(24,31,74,1);
 }
 
+.deleteAdmin {
+    text-decoration: none;
+    font-weight: 900;
+    color: white;
+    font-size: 25px;
+    margin-left: 5%;
+}
+
 #ugo {
-    margin-left: 104%;
+    margin-left: 148%;
+}
+
+.rolein {
+    margin-left: 10.5%;
+}
+
+.firstin {
+    margin-left: 5%;
+}
+
+.lastin {
+    margin-left: 5.5%;
+}
+
+.emailin {
+    margin-left: 10%;
+}
+
+.passwordin {
+    margin-left: 6.5%;
+}
+
+#goreg {
+    margin-left: 16%;
+    margin-top: 2%;
+}
+
+.emaillog {
+    margin-left: 2.5%;
+}
+
+#golog {
+    margin-left: 9.5%;
+    margin-top: 2%;
 }
