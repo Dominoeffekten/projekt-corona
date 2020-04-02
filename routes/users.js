@@ -3,7 +3,7 @@ var router = express.Router();
 const userHandler = require("../models/handleUsers");
 const ToDoHandler = require("../models/handleToDo");
 const roleHandler = require("../models/handleRole");
-const xml = require("../models/xml");
+const xmlHandler = require("../models/xml");
 const { body,validationResult,sanitizeBody,check } = require('express-validator');
 const fs = require('fs');
 
@@ -157,20 +157,27 @@ router.post('/user/delete/:id', async function(req, res) { //fjerner en todo  - 
 
 /* Download a template */
 router.post('/download/:type',  async function(req, res) { //download mongo
-  console.log(req.body.email);
+  //console.log(req.body.email);
   let url = req.url.substring(10);
-    /*if(url = "json"){ //JSON template
+  console.log(url);
+    if(url = "json"){ //JSON template
       let todo = await ToDoHandler.getToDo({userID: req.body.email}, {sort: {title: 1}});
-      res.json(todo);
       fs.writeFile('todoList.json', todo, (err) => {
         if (err) throw err;
         console.log('To do saved!');
-        //return res.redirect('/users/user');
+        return res.redirect('/users/user');
       });
-    }else*/ if(url = "xml"){ //XML template
+    } else if(url = "xml"){ //XML template
       let todo = await ToDoHandler.getToDo({userID: req.body.email}, {sort: {title: 1}});
-    }
-  
+      //console.log(todo);
+      let xml = await xmlHandler.xmlMaker(todo);
+      //console.log(xml);
+      fs.writeFile('todoList.xml', xml, (err) => {
+        if (err) throw err;
+        console.log('To do saved!');
+        return res.redirect('/users/user');
+    });
+    } 
 });
 router.get('/user/delete/:id', async function(req, res) { //fjerner en todo  - virker ikke
   console.log("del0 " + req.params.id);
