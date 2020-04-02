@@ -1,15 +1,15 @@
 # projekt-corona
 
-Der er vedhæftet en mongo dump fil, hvor der er adgang brugere, samt samt post it notes. 
+<p>Der er vedhæftet en mongo dump fil, hvor der er adgang brugere, samt samt post it notes. </p>
 
-Admin kontoen er:
-rikke@mail.com
-test123
+<b>Admin kontoen er:</b><br>
+rikke@mail.com<br>
+test123<br>
 
-user:
-tinna@mail.com
-test123
+<b>user:</b><br>
+tinna@mail.com<br>
+test123<br>
 
-new:
-test@mail.com
-test123
+<b>new:</b><br>
+test@mail.com<br>
+test123<br>
