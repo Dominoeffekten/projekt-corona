@@ -2,14 +2,14 @@
 
 <p>Der er vedhæftet en mongo dump fil, hvor der er adgang brugere, samt samt post it notes. </p>
 
-<b>Admin kontoen er:</b><br>
+<b>Admin konto</b><br>
 rikke@mail.com<br>
 test123<br>
 
-<b>user:</b><br>
+<b>User konto</b><br>
 tinna@mail.com<br>
 test123<br>
 
-<b>new:</b><br>
+<b>New konto</b><br>
 test@mail.com<br>
 test123<br>
