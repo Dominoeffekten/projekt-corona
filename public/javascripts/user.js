@@ -22,7 +22,6 @@ const makeToDos = function (e) {
     var month = d.getMonth() + 1;
     var day = d.getDate()
     let date = year +"-"+month+"-"+day
-
     
     var dateControl = document.querySelector('input[type="date"]');
     dateControl.setAttribute("value", date);
