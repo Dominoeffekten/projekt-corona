@@ -2250,3 +2250,27 @@
 2020-04-02T09:43:05.075+0200 I  NETWORK  [conn654] received client metadata from 127.0.0.1:58238 conn654: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
 2020-04-02T09:43:05.078+0200 I  NETWORK  [conn653] end connection 127.0.0.1:58237 (1 connection now open)
 2020-04-02T09:43:05.079+0200 I  NETWORK  [conn654] end connection 127.0.0.1:58238 (0 connections now open)
+2020-04-02T10:19:17.338+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:58757 #655 (1 connection now open)
+2020-04-02T10:19:17.343+0200 I  NETWORK  [conn655] received client metadata from 127.0.0.1:58757 conn655: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-04-02T10:19:17.360+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:58758 #656 (2 connections now open)
+2020-04-02T10:19:17.361+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:58759 #657 (3 connections now open)
+2020-04-02T10:19:17.361+0200 I  NETWORK  [conn656] received client metadata from 127.0.0.1:58758 conn656: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-04-02T10:19:17.362+0200 I  NETWORK  [conn657] received client metadata from 127.0.0.1:58759 conn657: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-04-02T10:19:17.362+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:58760 #658 (4 connections now open)
+2020-04-02T10:19:17.364+0200 I  NETWORK  [conn658] received client metadata from 127.0.0.1:58760 conn658: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-04-02T10:19:17.377+0200 I  NETWORK  [conn655] end connection 127.0.0.1:58757 (3 connections now open)
+2020-04-02T10:19:17.380+0200 I  NETWORK  [conn658] end connection 127.0.0.1:58760 (2 connections now open)
+2020-04-02T10:19:17.381+0200 I  NETWORK  [conn657] end connection 127.0.0.1:58759 (1 connection now open)
+2020-04-02T10:19:17.381+0200 I  NETWORK  [conn656] end connection 127.0.0.1:58758 (0 connections now open)
+2020-04-02T10:27:29.823+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:58859 #659 (1 connection now open)
+2020-04-02T10:27:29.825+0200 I  NETWORK  [conn659] received client metadata from 127.0.0.1:58859 conn659: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-04-02T10:27:29.828+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:58860 #660 (2 connections now open)
+2020-04-02T10:27:29.829+0200 I  NETWORK  [conn660] received client metadata from 127.0.0.1:58860 conn660: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-04-02T10:27:29.832+0200 I  NETWORK  [conn659] end connection 127.0.0.1:58859 (1 connection now open)
+2020-04-02T10:27:29.833+0200 I  NETWORK  [conn660] end connection 127.0.0.1:58860 (0 connections now open)
+2020-04-02T10:28:18.145+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:58876 #661 (1 connection now open)
+2020-04-02T10:28:18.146+0200 I  NETWORK  [conn661] received client metadata from 127.0.0.1:58876 conn661: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-04-02T10:28:18.149+0200 I  NETWORK  [listener] connection accepted from 127.0.0.1:58877 #662 (2 connections now open)
+2020-04-02T10:28:18.150+0200 I  NETWORK  [conn662] received client metadata from 127.0.0.1:58877 conn662: { driver: { name: "nodejs|Mongoose", version: "3.5.5" }, os: { type: "Darwin", name: "darwin", architecture: "x64", version: "19.3.0" }, platform: "'Node.js v13.7.0, LE (unified)", version: "3.5.5|5.9.7" }
+2020-04-02T10:28:18.152+0200 I  NETWORK  [conn661] end connection 127.0.0.1:58876 (1 connection now open)
+2020-04-02T10:28:18.154+0200 I  NETWORK  [conn662] end connection 127.0.0.1:58877 (0 connections now open)

@@ -112,3 +112,8 @@ p, #toDo {
 #dxml {
     float: left;
 }
+
+#djson {
+    float: left;
+    margin-left: 20%;
+}
