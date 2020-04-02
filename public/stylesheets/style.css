@@ -95,9 +95,13 @@ input #adminUser {
     margin-left: 25.1%;
 }
 
-p, #toDo {
-    margin-left: 25.1%; 
+#toDo {
+    margin-left: 24%; 
     width: 69%;
+}
+
+p {
+    margin-left: 25.1%;
 }
 
 #toDo table {
@@ -111,9 +115,10 @@ p, #toDo {
 
 #dxml {
     float: left;
+    margin-left: 1%;
 }
 
 #djson {
     float: left;
-    margin-left: 20%;
+    margin-left: 25%;
 }
