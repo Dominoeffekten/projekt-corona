@@ -10,8 +10,8 @@ exports.upsertToDo = async function (req) {
         userID: req.body.name,
         title: req.body.title,
         text: req.body.text,
-        deadline: req.body.deadline,
-        start: req.body.start
+        deadline: new Date(req.body.deadline),
+        start: new Date(req.body.start)
     });
     try { 
         let cs = await mon.upsert(dbServer, dbName, ToDo, toDo, chk);   
