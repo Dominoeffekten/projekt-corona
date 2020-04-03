@@ -1,6 +1,6 @@
 # projekt-corona
 
-<p>Der er vedhæftet en mongo dump fil, hvor der er adgang brugere, samt samt post it notes. </p>
+<p>Der er vedhæftet en mongo dump fil, hvor der er brugere, samt samt post it notes. </p>
 
 <b>Admin konto</b><br>
 rikke@mail.com<br>
