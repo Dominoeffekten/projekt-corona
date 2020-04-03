@@ -71,8 +71,6 @@ router.post('/login', [
         subtitle: "You must be authorized by a admin",
         loggedin: false,
       });
-    } if (req.session.role === 'undefined') { //admin is there
-      return res.redirect('/users/login');
     }
   } else { //user not there
       res.render('login', {
@@ -85,12 +83,19 @@ router.post('/login', [
 
 /* admin */
 router.get('/admin',  async function(req, res) { //start login
+  if (req.session.role === 'admin'){
   res.render('admin', { //admin is there
     subtitle: "The admin site",
     scriptLink:'/javascripts/admin.js',
     loggedin: true,
     who: "Hello " + req.session.user
   });
+  } else{
+    res.render('login', {
+      subtitle: 'User Login',
+        loggedin: false,
+    });
+  }
 });
 router.get('/admin/user',  async function(req, res) { //start login
   let user = await userHandler.getUsers({}, {sort: {role: 1, created: 1 }});
@@ -124,13 +129,20 @@ router.get('/admin/delete/:email',  async function(req, res) { //slet user i adm
 router.get('/user',  async function(req, res) { //start user
   //console.log(req.session.email);
   //console.log(req.session.user);
-  res.render('user', { 
-    subtitle: "The user site",
-    scriptLink:'/javascripts/user.js',
-    loggedin: true,
-    who: "Hello " + req.session.user,
-    read: req.session.email,
-  });
+  if (req.session.role === 'user'){
+    res.render('user', { 
+      subtitle: "The user site",
+      scriptLink:'/javascripts/user.js',
+      loggedin: true,
+      who: "Hello " + req.session.user,
+      read: req.session.email,
+    });
+  }else{
+    res.render('login', {
+      subtitle: 'User Login',
+        loggedin: false,
+    });
+  }
 });
 router.post('/user/',[ //indsætter en todo liste
   check('title').isLength({ min: 1 }),
